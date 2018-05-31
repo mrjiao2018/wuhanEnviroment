@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>layout 后台大布局 - Layui</title>
+    <link rel="stylesheet" href="statics/layui/css/layui.css">
+    <link href="statics/css/index.css" rel="stylesheet">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-main">
+            <div class="layui-logo">自然资源资产价值计算</div>
+            <div class="layui-form component">
+
+            </div>
+            <!-- 头部区域（可配合layui已有的水平导航） -->
+            <ul class="layui-nav layui-layout-left">
+                <li class="layui-nav-item"><a href="">土地</a></li>
+                <li class="layui-nav-item"><a href="">矿产</a></li>
+                <li class="layui-nav-item layui-this"><a href="">森林</a></li>
+                <li class="layui-nav-item"><a href="">水</a></li>
+                <li class="layui-nav-item"><a href="">生物</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <div id="forest-nav">
+                <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a class="" href="javascript:;">涵养水源</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">林分调节水量功能计算</a></dd>
+                            <dd><a href="javascript:;">调节水量计算</a></dd>
+                            <dd><a href="javascript:;">净化水质计算</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">保育土壤</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">林分年固土量计算</a></dd>
+                            <dd><a href="javascript:;">减少的氮流失量计算</a></dd>
+                            <dd><a href="javascript:;">减少的磷流失量计算</a></dd>
+                            <dd><a href="javascript:;">减少的钾流失量计算</a></dd>
+                            <dd><a href="javascript:;">固土价值计算</a></dd>
+                            <dd><a href="javascript:;">保肥价值计算</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">固碳</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">植被年固碳量计算</a></dd>
+                            <dd><a href="javascript:;">土壤年固碳量计算</a></dd>
+                            <dd><a href="javascript:;">林分年固碳价值计算</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">释氧</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">林分年释氧量计算</a></dd>
+                            <dd><a href="javascript:;">林分年释氧价值计算</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">积累营养物质</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">林分固氮量计算</a></dd>
+                            <dd><a href="javascript:;">林分固磷量计算</a></dd>
+                            <dd><a href="javascript:;">林分固钾量计算</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">生产负离子量</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">林分年提供负离子个数计算</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">吸收污染物</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">林分年吸收二氧化硫量计算</a></dd>
+                            <dd><a href="javascript:;">林分年吸收氟化物量计算</a></dd>
+                            <dd><a href="javascript:;">林分年吸收氮氧化物量计算</a></dd>
+                            <dd><a href="javascript:;">林分年吸收重金属量计算</a></dd>
+                            <dd><a href="javascript:;">林分年滞尘量计算</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">森林防护</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 15px;">内容主体区域</div>
+    </div>
+</div>
+<script src="statics/layui/layui.js"></script>
+<script>
+    //JavaScript代码区域
+    layui.use('element', function(){
+        var element = layui.element;
+
+    });
+</script>
+</body>
+</html>
