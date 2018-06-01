@@ -99,15 +99,273 @@
 
     <div class="layui-body">
         <!-- 内容主体区域 -->
-        <div style="padding: 15px;">内容主体区域</div>
+        <!--涵养水源部分-->
+        <div class="water">
+            <div class="water-1-calculator">
+                <div class="site-title">
+                    <fieldset><legend><a name="use">林分调节水量功能计算</a></legend></fieldset>
+                </div>
+                <div class="site-text site-block">
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">降水量</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">mm.a<sup>-1</sup></div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">林分蒸散量</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">mm.a<sup>-1</sup></div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">地表径流量</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">mm.a<sup>-1</sup></div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">林分面积</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></sup></div>
+                        </div>
+                        <div class="layui-form-item  block-display left-move">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
+                        <div class="layui-form-item block-display left-move">
+                            <table class="layui-table">
+                                <colgroup>
+                                    <col width="150">
+                                    <col width="150">
+                                    <col width="150">
+                                    <col width="150">
+                                    <col width="150">
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th>降水量/mm.a<sup>-1</sup></th>
+                                    <th>林分蒸散量/mm.a<sup>-1</sup></th>
+                                    <th>地表径流量/mm.a<sup>-1</sup></th>
+                                    <th>林分面积/hm<sup>2</sup></sup></th>
+                                    <th>林分调节水量功能/m<sup>3</sup>.a<sup>-1</sup></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>待输入</td>
+                                    <td>待输入</td>
+                                    <td>待输入</td>
+                                    <td>待输入</td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="water-2-calculator">
+                <div class="site-title">
+                    <fieldset><legend><a name="use">林分调节水量功能计算</a></legend></fieldset>
+                </div>
+                <div class="site-text site-block">
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">降水量</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">mm.a<sup>-1</sup></div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">林分蒸散量</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">mm.a<sup>-1</sup></div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">地表径流量</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">mm.a<sup>-1</sup></div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">林分面积</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></sup></div>
+                        </div>
+                        <div class="layui-form-item  block-display left-move">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
+                        <div class="layui-form-item block-display left-move">
+                            <table class="layui-table">
+                                <colgroup>
+                                    <col width="150">
+                                    <col width="150">
+                                    <col width="150">
+                                    <col width="150">
+                                    <col width="150">
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th>降水量/mm.a<sup>-1</sup></th>
+                                    <th>林分蒸散量/mm.a<sup>-1</sup></th>
+                                    <th>地表径流量/mm.a<sup>-1</sup></th>
+                                    <th>林分面积/hm<sup>2</sup></sup></th>
+                                    <th>林分调节水量功能/m<sup>3</sup>.a<sup>-1</sup></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>待输入</td>
+                                    <td>待输入</td>
+                                    <td>待输入</td>
+                                    <td>待输入</td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="water-3-calculator">
+                <div class="site-title">
+                    <fieldset><legend><a name="use">林分调节水量功能计算</a></legend></fieldset>
+                </div>
+                <div class="site-text site-block">
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">降水量</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">mm.a<sup>-1</sup></div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">林分蒸散量</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">mm.a<sup>-1</sup></div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">地表径流量</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">mm.a<sup>-1</sup></div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">林分面积</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></sup></div>
+                        </div>
+                        <div class="layui-form-item  block-display left-move">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
+                        <div class="layui-form-item block-display left-move">
+                            <table class="layui-table">
+                                <colgroup>
+                                    <col width="150">
+                                    <col width="150">
+                                    <col width="150">
+                                    <col width="150">
+                                    <col width="150">
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th>降水量/mm.a<sup>-1</sup></th>
+                                    <th>林分蒸散量/mm.a<sup>-1</sup></th>
+                                    <th>地表径流量/mm.a<sup>-1</sup></th>
+                                    <th>林分面积/hm<sup>2</sup></sup></th>
+                                    <th>林分调节水量功能/m<sup>3</sup>.a<sup>-1</sup></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>待输入</td>
+                                    <td>待输入</td>
+                                    <td>待输入</td>
+                                    <td>待输入</td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--保育土地部分-->
+        <div class="soil">
+            <div class="soil-1-calculator"></div>
+            <div class="soil-2-calculator"></div>
+            <div class="soil-3-calculator"></div>
+            <div class="soil-4-calculator"></div>
+            <div class="soil-5-calculator"></div>
+            <div class="soil-6-calculator"></div>
+        </div>
+        <!--固碳-->
+        <div class="carbon">
+            <div class="carbon-1-calculator"></div>
+            <div class="carbon-2-calculator"></div>
+            <div class="carbon-3-calculator"></div>
+        </div>
+        <!--释放氧气-->
+        <div class="oxygen">
+            <div class="oxygen-1-calculator"></div>
+            <div class="oxygen-2-calculator"></div>
+        </div>
+        <!--积累营养物质-->
+        <div class="nutriment">
+            <div class="nutriment-1-calculator"></div>
+            <div class="nutriment-2-calculator"></div>
+            <div class="nutriment-3-calculator"></div>
+        </div>
+        <!--生产负离子量-->
+        <div class="ion">
+            <div class="ion-1-calculator"></div>
+        </div>
+        <!--吸收污染物-->
+        <div class="pollution">
+            <div class="pollution-1-calculator"></div>
+            <div class="pollution-2-calculator"></div>
+            <div class="pollution-3-calculator"></div>
+            <div class="pollution-4-calculator"></div>
+            <div class="pollution-5-calculator"></div>
+        </div>
+        <!--森林防护-->
+        <div class="forest-protect"></div>
     </div>
 </div>
+<script src="statics/js/jquery.min.js"></script>
 <script src="statics/layui/layui.js"></script>
 <script>
     //JavaScript代码区域
     layui.use('element', function(){
         var element = layui.element;
-
     });
 </script>
 </body>

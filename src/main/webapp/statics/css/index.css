@@ -1,3 +1,28 @@
-.search-button {
-    margin-left: 20px;
+.site-title{ margin: 30px 0 20px;}
+.site-title fieldset{border: none; padding: 0; border-top: 2px solid #e6e6e6;}
+.site-title fieldset legend{margin-left: 50px;  padding: 0 10px; font-size: 22px; font-weight: 300;}
+
+.site-text a{color: #01AAED;}
+.site-text{position:relative; margin-left: 50px; margin-right: 50px; background-color: #f4f4f4;}
+.site-text p{margin-bottom: 10px;  line-height:22px;}
+.site-text em{padding: 0 3px; font-weight: 500; font-style: italic; color: #666;}
+.site-text code{margin:0 5px; padding: 3px 10px; border: 1px solid #e6e6e6; background-color: #fbfbfb; color: #666; border-radius: 2px;}
+
+.site-block{padding: 20px; border: 1px solid #eee;}
+.site-block .layui-form{margin-right: 200px;}
+
+.layui-form {
+    width: auto;
+}
+.layui-form-item {
+    display: inline-block;
+}
+.block-display {
+    display: block;
+}
+.layui-form-label {
+    width: 140px;
+}
+.left-move {
+    margin-left: 60px;
 }
