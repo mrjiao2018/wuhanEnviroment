@@ -22,6 +22,7 @@
                 <li class="layui-nav-item layui-this"><a href="">森林</a></li>
                 <li class="layui-nav-item"><a href="">水</a></li>
                 <li class="layui-nav-item"><a href="">生物</a></li>
+                <li class="layui-nav-item"><a href="">往年结果查询</a></li>
             </ul>
         </div>
     </div>
@@ -71,6 +72,7 @@
                             <dd><a href="javascript:;">林分固氮量计算</a></dd>
                             <dd><a href="javascript:;">林分固磷量计算</a></dd>
                             <dd><a href="javascript:;">林分固钾量计算</a></dd>
+                            <dd><a href="javascript:;">林分年营养物质积累价值计算</a></dd>
                         </dl>
                     </li>
                     <li class="layui-nav-item">
@@ -91,6 +93,9 @@
                     </li>
                     <li class="layui-nav-item">
                         <a href="javascript:;">森林防护</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">总表</a>
                     </li>
                 </ul>
             </div>
@@ -343,6 +348,7 @@
             <div class="nutriment-1-calculator"></div>
             <div class="nutriment-2-calculator"></div>
             <div class="nutriment-3-calculator"></div>
+            <div class="nutriment-4-calculator"></div>
         </div>
         <!--生产负离子量-->
         <div class="ion">
@@ -358,6 +364,236 @@
         </div>
         <!--森林防护-->
         <div class="forest-protect"></div>
+        <!--生成表格-->
+        <div class="summary-sheet">
+            <div class="site-title">
+                <fieldset><legend><a name="use">总表</a></legend></fieldset>
+            </div>
+            <div class="site-text">
+                <table class="layui-table">
+                    <colgroup>
+                        <col width="200">
+                        <col width="150">
+                        <col width="150">
+                        <col width="150">
+                        <col width="100">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>类别</sup></th>
+                        <th colspan="2">内容</sup></th>
+                        <th>实物量</sup></th>
+                        <th>单位</sup></sup></th>
+                        <th>价值量(万元/a)</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td rowspan="5">林地、林木、林 产品价值</td>
+                        <td>林地</td>
+                        <td>—</td>
+                        <td></td>
+                        <td>hm<sup>2</sup></td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>林木</td>
+                        <td>直接价值</td>
+                        <td></td>
+                        <td>m<sup>3</sup></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>林木</td>
+                        <td>流量价值</td>
+                        <td></td>
+                        <td>m<sup>3</sup></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>林产品</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>小计</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="21">森林生态服务价值</td>
+                        <td rowspan="3">涵养水源</td>
+                        <td>调节水量</td>
+                        <td></td>
+                        <td>m<sup>3</sup>/a</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>净化水质</td>
+                        <td></td>
+                        <td>m<sup>3</sup>/a</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>小计</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">保育土壤</td>
+                        <td>固土</td>
+                        <td></td>
+                        <td>t/a</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>保肥</td>
+                        <td></td>
+                        <td>t/a</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>小计</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">固碳释氧</td>
+                        <td>固碳</td>
+                        <td></td>
+                        <td>t/a</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>释氧</td>
+                        <td></td>
+                        <td>t/a</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>小计</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4">积累营养物质</td>
+                        <td>林木固氮</td>
+                        <td></td>
+                        <td>t/a</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>林木固磷</td>
+                        <td></td>
+                        <td>t/a</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>林木固钾</td>
+                        <td></td>
+                        <td>t/a</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>小计</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5">净化大气环境</td>
+                        <td>提供负离子</td>
+                        <td></td>
+                        <td>个/a</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>吸收污染物</td>
+                        <td></td>
+                        <td>kg/a</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>降低噪音</td>
+                        <td></td>
+                        <td>km</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>滞尘</td>
+                        <td></td>
+                        <td>kg/a</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>小计</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="1">森林防护</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="1">生物多样性保护</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="1">小计</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">森林社会服务价值</td>
+                        <td>森林游憩</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>小计</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="1">合计</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <form class="layui-form flex-display" action="">
+                    <div class="layui-form-item">
+                        <div class="layui-input-block layui-form-item-remove-left">
+                            <button class="layui-btn" lay-submit lay-filter="formDemo">存储表格</button>
+                            <button class="layui-btn" lay-submit lay-filter="formDemo">打印表格</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 <script src="statics/js/jquery.min.js"></script>

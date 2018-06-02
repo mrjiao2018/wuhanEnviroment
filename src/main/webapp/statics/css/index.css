@@ -26,3 +26,13 @@
 .left-move {
     margin-left: 60px;
 }
+
+.flex-display{
+    display: flex;
+    justify-content: center;
+}
+
+.layui-form-item-remove-left{
+    padding-left: 0;
+    margin-left: 0;
+}
