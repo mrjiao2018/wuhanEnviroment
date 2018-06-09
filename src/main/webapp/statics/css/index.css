@@ -36,3 +36,15 @@
     padding-left: 0;
     margin-left: 0;
 }
+
+.layui-form-mid{
+    width: 55px;
+}
+
+.label-special{
+    width: 200px;
+}
+
+.layui-form-mid-special{
+    width: 80px;
+}
