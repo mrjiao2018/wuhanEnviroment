@@ -32,17 +32,18 @@ $(function () {
     var pollution_4_calculator_form = $(".pollution-4-calculator:first form:first");
     var pollution_5_calculator_form = $(".pollution-5-calculator:first form:first");
 
+    submitForm(water_1_calculator_form);
 });
 
 //表单提交函数
 function submitForm(form) {
     var options = {
-        url: "",
+        url: "/test",
         type: "post",
         dataType: "json",
-        success: function showResponse(responseText) {
-
-    }
+        success: function(responseText) {
+            console.log(responseText);
+        }
     };
     form.ajaxForm(options)
 }
