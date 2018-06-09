@@ -48,3 +48,7 @@
 .layui-form-mid-special{
     width: 80px;
 }
+
+.hidden-input{
+    display: none;
+}
