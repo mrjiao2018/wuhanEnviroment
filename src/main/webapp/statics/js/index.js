@@ -44,8 +44,6 @@ function submitForm($form) {
         type: "post",
         dataType: "json",
         beforeSubmit: function(formData) {
-            alert(formData);
-            console.log(formData);
             for(var i=0; i<formData.length-1; ++i) {
                 $tds[i].innerHTML = formData[i].value;
             }
