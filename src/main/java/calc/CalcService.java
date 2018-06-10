@@ -66,7 +66,7 @@ public class CalcService {
         double a=Double.parseDouble(jsonMap.get("A").toString());
         double x1=Double.parseDouble(jsonMap.get("X1").toString());
         double x2=Double.parseDouble(jsonMap.get("X2").toString());
-        double ctu=Double.parseDouble(jsonMap.get("Ctu").toString());
+        double ctu=Double.parseDouble(jsonMap.get("CTu").toString());
         double p=Double.parseDouble(jsonMap.get("p").toString());
         return a*ctu*(x1-x2)/p;
     }
