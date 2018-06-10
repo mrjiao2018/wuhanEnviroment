@@ -3,7 +3,7 @@
 .site-title fieldset legend{margin-left: 50px;  padding: 0 10px; font-size: 22px; font-weight: 300;}
 
 .site-text a{color: #01AAED;}
-.site-text{position:relative; margin-left: 50px; margin-right: 50px; background-color: #f4f4f4;}
+.site-text{position:relative; margin-left: 50px; margin-right: 50px; background-color: #eff5f9;}
 .site-text p{margin-bottom: 10px;  line-height:22px;}
 .site-text em{padding: 0 3px; font-weight: 500; font-style: italic; color: #666;}
 .site-text code{margin:0 5px; padding: 3px 10px; border: 1px solid #e6e6e6; background-color: #fbfbfb; color: #666; border-radius: 2px;}
@@ -51,4 +51,69 @@
 
 .hidden-input{
     display: none;
+}
+
+.layui-header {
+    background-color: #3676cc!important;
+    color: white;
+}
+
+.layui-logo{
+    color:white!important;
+}
+
+.layui-nav .layui-nav-item a{
+    color:white;
+}
+.layui-side {
+    /*background-color: #f0f5f9!important;*/
+}
+
+th{
+    background-color: white;
+    color: #333;
+}
+
+.layui-btn {
+    background-color: #3676cc;
+}
+
+.layui-nav-child {
+    background-color: #f0f5f9!important;
+    color: #333;
+}
+
+.layui-side-scroll {
+    background-color: #f0f5f9!important;
+}
+
+.layui-btn-primary {
+    background-color: #fff;
+}
+.layui-side .layui-nav-item {
+    background-color: #f0f5f9;
+}
+.layui-side .layui-nav-item a:hover{
+    color: #3676cc;
+    background-color: #f0f5f9;
+}
+.layui-side .layui-nav-itemed>a{
+    color: #3676cc!important;
+    background-color: #f0f5f9;
+}
+.layui-side .layui-nav-child dd{
+    background-color: #f0f5f9;
+}
+.layui-side .layui-nav-item a{
+    color: #333;
+}
+.layui-side .layui-nav-child a{
+    padding-left: 30px;
+}
+.layui-side .layui-nav-child .layui-this>a{
+    background-color: #f0f5f9!important;
+    color:#419388!important;
+}
+.layui-side layui-nav-more{
+    background-color: black;
 }
