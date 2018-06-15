@@ -1,39 +1,30 @@
 $(function () {
     //获取所有的form对象
-    //water
-    var $water_1_calculator_form = $(".water-1-calculator:first form:first");
-    var $water_2_calculator_form = $(".water-2-calculator:first form:first");
-    var $water_3_calculator_form = $(".water-3-calculator:first form:first");
-    //soil
-    var $soil_1_calculator_form = $(".soil-1-calculator:first form:first");
-    var $soil_2_calculator_form = $(".soil-2-calculator:first form:first");
-    var $soil_3_calculator_form = $(".soil-3-calculator:first form:first");
-    var $soil_4_calculator_form = $(".soil-4-calculator:first form:first");
-    var $soil_5_calculator_form = $(".soil-5-calculator:first form:first");
-    var $soil_6_calculator_form = $(".soil-6-calculator:first form:first");
-    //carbon
-    var $carbon_1_calculator_form = $(".carbon-1-calculator:first form:first");
-    var $carbon_2_calculator_form = $(".carbon-2-calculator:first form:first");
-    var $carbon_3_calculator_form = $(".carbon-3-calculator:first form:first");
-    //oxygen
-    var $oxygen_1_calculator_form = $(".oxygen-1-calculator:first form:first");
-    var $oxygen_2_calculator_form = $(".oxygen-2-calculator:first form:first");
-    //nutriment
-    var $nutriment_1_calculator_form = $(".nutriment-1-calculator:first form:first");
-    var $nutriment_2_calculator_form = $(".nutriment-2-calculator:first form:first");
-    var $nutriment_3_calculator_form = $(".nutriment-3-calculator:first form:first");
-    var $nutriment_4_calculator_form = $(".nutriment-4-calculator:first form:first");
-    //ion
-    var $ion_1_calculator_form = $(".ion-1-calculator:first form:first");
-    //pollution
-    var $pollution_1_calculator_form = $(".pollution-1-calculator:first form:first");
-    var $pollution_2_calculator_form = $(".pollution-2-calculator:first form:first");
-    var $pollution_3_calculator_form = $(".pollution-3-calculator:first form:first");
-    var $pollution_4_calculator_form = $(".pollution-4-calculator:first form:first");
-    var $pollution_5_calculator_form = $(".pollution-5-calculator:first form:first");
+    var calculatorArr = [];
+    //获取所有form所在的div对象
+    var calcDivArr = [];
+    var $calculatorDivs = $(".calculator");
+    var $specificCalcDivs = $calculatorDivs.children();
+    for(var i = 0; i < $specificCalcDivs.length; ++i) {
+        var $specificCalcDiv = $specificCalcDivs.eq(i);
+        calcDivArr.push($specificCalcDiv);
+        var $specificCalcForm = $specificCalcDiv.find("form").eq(0);
+        calculatorArr.push($specificCalcForm);
+    }
 
-    submitForm($water_1_calculator_form);
-    submitForm($water_2_calculator_form);
+    //获取总表
+    var $summarySheet = $(".summary-sheet").eq(0);
+
+    //在加载界面时，只展示第一个calcDiv，隐藏其余div及总表
+    //showSingleDiv(calcDivArr, $summarySheet);
+
+    //左侧导航栏切换表单函数
+    switchForm();
+
+    //提交表单
+    for(var k = 0; k < calculatorArr.length; ++k) {
+        submitForm(calculatorArr[k]);
+    }
 });
 
 //表单提交函数
@@ -53,6 +44,19 @@ function submitForm($form) {
         }
     };
     $form.ajaxForm(options)
+}
+
+//在加载界面时，只展示第一个calcDiv，隐藏其余div及总表
+function showSingleDiv(calcDivArr, $summarySheet) {
+    for(var j = 1; j < calcDivArr.length; ++j) {
+        calcDivArr[j].addClass("hidden");
+    }
+    $summarySheet.addClass("hidden");
+}
+
+//左侧导航栏切换表单函数
+function switchForm() {
+
 }
 
 
