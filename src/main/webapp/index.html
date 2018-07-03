@@ -29,7 +29,7 @@
                     <a href="javascript:;">
                         地理位置
                     </a>
-                    <dl class="layui-nav-child">
+                    <dl class="layui-nav-child" id="position-select">
                         <dd><a href="">湖北省</a></dd>
                         <dd><a href="">安徽省</a></dd>
                         <dd><a href="">河南省</a></dd>
@@ -37,14 +37,14 @@
 
                     </dl>
                 </li>
-                <li class="layui-nav-item">
-                    <a href="javascript:;">
+                <li class="layui-nav-item" id="year-select">
+                    <a href="javascript:;" id="year-selected">
                         日期
                     </a>
                     <dl class="layui-nav-child">
-                        <dd><a href="">2011</a></dd>
-                        <dd><a href="">2015</a></dd>
-                        <dd><a href="">添加年份</a></dd>
+                        <dd><a href="javascript:;">2011</a></dd>
+                        <dd><a href="javascript:;">2015</a></dd>
+                        <dd><a href="javascript:;">添加年份</a></dd>
                     </dl>
                 </li>
             </ul>
@@ -59,60 +59,60 @@
                     <li class="layui-nav-item layui-nav-itemed">
                         <a class="" href="javascript:;">涵养水源</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;">林分调节水量功能计算</a></dd>
-                            <dd><a href="javascript:;">林分年调节水量价值计算</a></dd>
-                            <dd><a href="javascript:;">林分年净化水质价值计算</a></dd>
+                            <dd><a class="side-nav" href="javascript:;">林分调节水量功能计算</a></dd>
+                            <dd><a class="side-nav" href="javascript:;">林分年调节水量价值计算</a></dd>
+                            <dd><a class="side-nav" href="javascript:;">林分年净化水质价值计算</a></dd>
                         </dl>
                     </li>
                     <li class="layui-nav-item">
                         <a href="javascript:;">保育土壤</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;">林分年固土量计算</a></dd>
-                            <dd><a href="javascript:;">减少的氮流失量计算</a></dd>
-                            <dd><a href="javascript:;">减少的磷流失量计算</a></dd>
-                            <dd><a href="javascript:;">减少的钾流失量计算</a></dd>
-                            <dd><a href="javascript:;">固土价值计算</a></dd>
-                            <dd><a href="javascript:;">保肥价值计算</a></dd>
+                            <dd><a class="side-nav" href="javascript:;">林分年固土量计算</a></dd>
+                            <dd><a class="side-nav" href="javascript:;">减少的氮流失量计算</a></dd>
+                            <dd><a class="side-nav" href="javascript:;">减少的磷流失量计算</a></dd>
+                            <dd><a class="side-nav" href="javascript:;">减少的钾流失量计算</a></dd>
+                            <dd><a class="side-nav" href="javascript:;">固土价值计算</a></dd>
+                            <dd><a class="side-nav" href="javascript:;">保肥价值计算</a></dd>
                         </dl>
                     </li>
                     <li class="layui-nav-item">
                         <a href="javascript:;">固碳</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;">植被年固碳量计算</a></dd>
-                            <dd><a href="javascript:;">土壤年固碳量计算</a></dd>
-                            <dd><a href="javascript:;">林分年固碳价值计算</a></dd>
+                            <dd><a class="side-nav" href="javascript:;">植被年固碳量计算</a></dd>
+                            <dd><a class="side-nav" href="javascript:;">土壤年固碳量计算</a></dd>
+                            <dd><a class="side-nav" href="javascript:;">林分年固碳价值计算</a></dd>
                         </dl>
                     </li>
                     <li class="layui-nav-item">
                         <a href="javascript:;">释氧</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;">林分年释氧量计算</a></dd>
-                            <dd><a href="javascript:;">林分年释氧价值计算</a></dd>
+                            <dd><a class="side-nav" href="javascript:;">林分年释氧量计算</a></dd>
+                            <dd><a class="side-nav" href="javascript:;">林分年释氧价值计算</a></dd>
                         </dl>
                     </li>
                     <li class="layui-nav-item">
                         <a href="javascript:;">积累营养物质</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;">林分固氮量计算</a></dd>
-                            <dd><a href="javascript:;">林分固磷量计算</a></dd>
-                            <dd><a href="javascript:;">林分固钾量计算</a></dd>
-                            <dd><a href="javascript:;">林分年营养物质积累价值计算</a></dd>
+                            <dd><a class="side-nav" href="javascript:;">林分固氮量计算</a></dd>
+                            <dd><a class="side-nav" href="javascript:;">林分固磷量计算</a></dd>
+                            <dd><a class="side-nav" href="javascript:;">林分固钾量计算</a></dd>
+                            <dd><a class="side-nav" href="javascript:;">林分年营养物质积累价值计算</a></dd>
                         </dl>
                     </li>
                     <li class="layui-nav-item">
                         <a href="javascript:;">生产负离子量</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;">林分年提供负离子个数计算</a></dd>
+                            <dd><a class="side-nav" href="javascript:;">林分年提供负离子个数计算</a></dd>
                         </dl>
                     </li>
                     <li class="layui-nav-item">
                         <a href="javascript:;">吸收污染物</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;">林分年吸收二氧化硫量计算</a></dd>
-                            <dd><a href="javascript:;">林分年吸收氟化物量计算</a></dd>
-                            <dd><a href="javascript:;">林分年吸收氮氧化物量计算</a></dd>
-                            <dd><a href="javascript:;">林分年吸收重金属量计算</a></dd>
-                            <dd><a href="javascript:;">林分年滞尘量计算</a></dd>
+                            <dd><a class="side-nav" href="javascript:;">林分年吸收二氧化硫量计算</a></dd>
+                            <dd><a class="side-nav" href="javascript:;">林分年吸收氟化物量计算</a></dd>
+                            <dd><a class="side-nav" href="javascript:;">林分年吸收氮氧化物量计算</a></dd>
+                            <dd><a class="side-nav" href="javascript:;">林分年吸收重金属量计算</a></dd>
+                            <dd><a class="side-nav" href="javascript:;">林分年滞尘量计算</a></dd>
                         </dl>
                     </li>
                     <li class="layui-nav-item">
@@ -130,11 +130,11 @@
         <!-- 顶部位置信息 -->
         <div class="position-nav">
             <span class="layui-breadcrumb" lay-separator="-">
-              <a href="javascript:return false;">2011年</a>
-              <a href="javascript:return false;">中国</a>
-              <a href="javascript:return false;">湖北省</a>
-              <a href="javascript:return false;">武汉市</a>
-              <a href="javascript:return false;">梁子湖区</a>
+              <a href="javascript:;" id="year">2011</a>
+              <a href="javascript:;">中国</a>
+              <a href="javascript:;">湖北省</a>
+              <a href="javascript:;">武汉市</a>
+              <a href="javascript:;">梁子湖区</a>
             </span>
         </div>
         <!--涵养水源部分-->
