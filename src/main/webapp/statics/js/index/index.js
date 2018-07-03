@@ -139,7 +139,7 @@ function dataReload(calculatorArr, $summarySheet) {
         $year_options.eq(i).click(function () {
             year = $(this).text();
             $year.text(year);
-            $year_select.find("#year-selected").text(year);
+            // $year_select.find("#year-selected").text(year);
             //加载data数据并显示在form中
             dataLoad(year, calculatorArr, $summarySheet);
         });
