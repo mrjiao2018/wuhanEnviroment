@@ -9,9 +9,19 @@
     <servlet-name>test</servlet-name>
     <servlet-class>servlet.CalcServlet</servlet-class>
   </servlet>
+  
+  <servlet>
+    <servlet-name>mrjiaoTest</servlet-name>
+    <servlet-class>servlet.NewServletTest</servlet-class>
+  </servlet>
 
   <servlet-mapping>
     <servlet-name>test</servlet-name>
     <url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>mrjiaoTest</servlet-name>
+    <url-pattern>/mrjiao</url-pattern>
   </servlet-mapping>
 </web-app>
