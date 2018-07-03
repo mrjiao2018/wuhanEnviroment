@@ -1,14 +1,16 @@
 package servlet;
 
 import calc.CalcService;
+import com.google.gson.Gson;
+import temp.CurRecords;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -19,39 +21,36 @@ import javax.servlet.annotation.WebServlet;
 public class CalcServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-/*        BufferedReader reader = request.getReader();
-        String json = reader.readLine();*/
+        Cookie[] cs = request.getCookies();
+        String username=cs[0].getValue();
+
         Enumeration parameterNames = request.getParameterNames();
         Map map=new HashMap<String,String>();
-        String method="";
+        String className="";
         while(parameterNames.hasMoreElements()) {
             String str=parameterNames.nextElement().toString();
-            method=str;
+            className=str;
             map.put(str,request.getParameter(str));
         }
-        method=method.replace("-","_");
-        /*JsonParser jsonParser=new JsonParser();
-        JsonElement jsonTree = jsonParser.parse(json);
+        className=className.replace("-","_");
 
-        for (JsonElement param:
-             jsonTree.getAsJsonArray()) {
-            map.put(param.getAsJsonObject().get("name").getAsString(),
-                    param.getAsJsonObject().get("value").getAsDouble());
-        }*/
-        //String method=jsonTree.getAsJsonArray().get(jsonTree.getAsJsonArray().size()-1).getAsJsonObject().get("name").getAsString();
+
         try {
-            Method method1=CalcService.class.getMethod(method,Map.class);
-            double result=(Double) method1.invoke(CalcService.class.newInstance(),map);
-            PrintWriter out =response.getWriter();
-            System.out.println(result);
-            out.write("{\"result\":"+result+"}");
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+            Class c= Class.forName(className);
+            Method method=c.getMethod("calc",null);
+            Constructor<?> constructor = c.getDeclaredConstructor(Map.class);
+            constructor.setAccessible(true);
+
+            Object o=constructor.newInstance(map);
+            float result= (float)method.invoke(o);
+
+            CurRecords.add(username,o);
+            Map resultMap=new HashMap<String,Float>();
+            resultMap.put("result",result);
+
+            Gson gson=new Gson();
+            response.getWriter().print(gson.toJson(resultMap));
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

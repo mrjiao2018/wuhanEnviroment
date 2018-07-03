@@ -10,6 +10,7 @@ public class CalcService {
         double p=Double.parseDouble(jsonMap.get("P").toString());
         double e=Double.parseDouble(jsonMap.get("E").toString());
         double c=Double.parseDouble(jsonMap.get("C").toString());
+
         return 10*a*(p-e-c);
     }
 
