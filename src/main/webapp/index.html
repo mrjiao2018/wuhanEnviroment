@@ -24,7 +24,7 @@
                 <li class="layui-nav-item"><a href="">生物</a></li>
                 <li class="layui-nav-item"><a href="/resultOverview.html">往年结果查询</a></li>
             </ul>
-            <ul class="layui-nav layui-layout-right">
+            <ul class="layui-nav layui-layout-right" id="time-position-select">
                 <li class="layui-nav-item">
                     <a href="javascript:;">
                         地理位置
@@ -55,7 +55,7 @@
         <div class="layui-side-scroll">
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <div id="forest-nav">
-                <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <ul class="layui-nav layui-nav-tree" lay-filter="test">
                     <li class="layui-nav-item layui-nav-itemed">
                         <a class="" href="javascript:;">涵养水源</a>
                         <dl class="layui-nav-child">
@@ -118,7 +118,7 @@
                     <li class="layui-nav-item">
                         <a href="javascript:;">森林防护</a>
                     </li>
-                    <li class="layui-nav-item">
+                    <li class="layui-nav-item side-nav">
                         <a href="javascript:;">总表</a>
                     </li>
                 </ul>
@@ -141,46 +141,47 @@
         <div class="water calculator">
             <div class="water-1-calculator">
                 <div class="site-title">
-                    <fieldset><legend><a name="use">林分调节水量功能计算</a></legend></fieldset>
+                    <fieldset>
+                        <legend><a name="use">林分调节水量功能计算</a></legend>
+                    </fieldset>
                 </div>
                 <div class="site-text site-block">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分面积</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="A" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="A" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">降水量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="P" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="P" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">mm.a<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分蒸散量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="E" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="E" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">mm.a<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">地表径流量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="C" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="C" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">mm.a<sup>-1</sup></div>
                         </div>
-                        <div class="layui-form-item hidden">
-                            <div class="layui-input-inline">
-                                <input type="text" name="water-1-calculator" required  value=" " lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
                         <div class="layui-form-item  block-display left-move">
                             <div class="layui-input-block">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button class="layui-btn submit-btn" lay-submit lay-filter="formDemo">立即提交</button>
                                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                             </div>
                         </div>
@@ -218,53 +219,55 @@
             </div>
             <div class="water-2-calculator">
                 <div class="site-title">
-                    <fieldset><legend><a name="use">林分年调节水量价值计算</a></legend></fieldset>
+                    <fieldset>
+                        <legend><a name="use">林分年调节水量价值计算</a></legend>
+                    </fieldset>
                 </div>
                 <div class="site-text site-block">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label">水库建设单位库容投资</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="Cku" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="Cku" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">元.a<sup>-3</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分面积</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="A" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="A" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">降水量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="P" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="P" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">mm.a<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分蒸散量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="E" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="E" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">mm.a<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">地表径流量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="C" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="C" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">mm.a<sup>-1</sup></div>
                         </div>
-                        <div class="layui-form-item hidden">
-                            <div class="layui-input-inline">
-                                <input type="text" name="water-2-calculator" required  value=" " lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
                         <div class="layui-form-item  block-display left-move">
                             <div class="layui-input-block">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button class="layui-btn submit-btn" lay-submit lay-filter="formDemo">立即提交</button>
                                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                             </div>
                         </div>
@@ -305,53 +308,55 @@
             </div>
             <div class="water-3-calculator">
                 <div class="site-title">
-                    <fieldset><legend><a name="use">林分年净化水质价值计算</a></legend></fieldset>
+                    <fieldset>
+                        <legend><a name="use">林分年净化水质价值计算</a></legend>
+                    </fieldset>
                 </div>
                 <div class="site-text site-block">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label">水的净化费用</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="K" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="K" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">元.t<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分面积</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="A" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="A" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">降水量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="P" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="P" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">mm.a<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分蒸散量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="E" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="E" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">mm.a<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">地表径流量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="C" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="C" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">mm.a<sup>-1</sup></div>
                         </div>
-                        <div class="layui-form-item hidden">
-                            <div class="layui-input-inline">
-                                <input type="text" name="water-3-calculator" required  value=" " lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
                         <div class="layui-form-item  block-display left-move">
                             <div class="layui-input-block">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button class="layui-btn submit-btn" lay-submit lay-filter="formDemo">立即提交</button>
                                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                             </div>
                         </div>
@@ -395,39 +400,39 @@
         <div class="soil calculator">
             <div class="soil-1-calculator">
                 <div class="site-title">
-                    <fieldset><legend><a name="use">林分年固土量计算</a></legend></fieldset>
+                    <fieldset>
+                        <legend><a name="use">林分年固土量计算</a></legend>
+                    </fieldset>
                 </div>
                 <div class="site-text site-block">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分面积</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">无林地土壤侵蚀模数</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>-2</sup>a<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林地土壤侵蚀模数</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>-2</sup>a<sup>-1</sup></div>
                         </div>
-                        <div class="layui-form-item hidden">
-                            <div class="layui-input-inline">
-                                <input type="text" name="soil-1-calculator" required  value=" " lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
                         <div class="layui-form-item  block-display left-move">
                             <div class="layui-input-block">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button class="layui-btn submit-btn" lay-submit lay-filter="formDemo">立即提交</button>
                                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                             </div>
                         </div>
@@ -462,46 +467,47 @@
             </div>
             <div class="soil-2-calculator">
                 <div class="site-title">
-                    <fieldset><legend><a name="use">减少的氮流失量计算</a></legend></fieldset>
+                    <fieldset>
+                        <legend><a name="use">减少的氮流失量计算</a></legend>
+                    </fieldset>
                 </div>
                 <div class="site-text site-block">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分面积</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">土壤含氮量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">%</div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">无林地土壤侵蚀模数</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>-2</sup>a<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林地土壤侵蚀模数</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>-2</sup>a<sup>-1</sup></div>
                         </div>
-                        <div class="layui-form-item hidden">
-                            <div class="layui-input-inline">
-                                <input type="text" name="soil-2-calculator" required  value=" " lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
                         <div class="layui-form-item  block-display left-move">
                             <div class="layui-input-block">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button class="layui-btn submit-btn" lay-submit lay-filter="formDemo">立即提交</button>
                                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                             </div>
                         </div>
@@ -539,46 +545,47 @@
             </div>
             <div class="soil-3-calculator">
                 <div class="site-title">
-                    <fieldset><legend><a name="use">减少的磷流失量计算</a></legend></fieldset>
+                    <fieldset>
+                        <legend><a name="use">减少的磷流失量计算</a></legend>
+                    </fieldset>
                 </div>
                 <div class="site-text site-block">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分面积</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">土壤含磷量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">%</div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">无林地土壤侵蚀模数</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>-2</sup>a<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林地土壤侵蚀模数</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>-2</sup>a<sup>-1</sup></div>
                         </div>
-                        <div class="layui-form-item hidden">
-                            <div class="layui-input-inline">
-                                <input type="text" name="soil-3-calculator" required  value=" " lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
                         <div class="layui-form-item  block-display left-move">
                             <div class="layui-input-block">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button class="layui-btn submit-btn" lay-submit lay-filter="formDemo">立即提交</button>
                                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                             </div>
                         </div>
@@ -616,46 +623,47 @@
             </div>
             <div class="soil-4-calculator">
                 <div class="site-title">
-                    <fieldset><legend><a name="use">减少的钾流失量计算</a></legend></fieldset>
+                    <fieldset>
+                        <legend><a name="use">减少的钾流失量计算</a></legend>
+                    </fieldset>
                 </div>
                 <div class="site-text site-block">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分面积</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">土壤含钾量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">%</div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">无林地土壤侵蚀模数</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>-2</sup>a<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林地土壤侵蚀模数</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>-2</sup>a<sup>-1</sup></div>
                         </div>
-                        <div class="layui-form-item hidden">
-                            <div class="layui-input-inline">
-                                <input type="text" name="soil-4-calculator" required  value=" " lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
                         <div class="layui-form-item  block-display left-move">
                             <div class="layui-input-block">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button class="layui-btn submit-btn" lay-submit lay-filter="formDemo">立即提交</button>
                                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                             </div>
                         </div>
@@ -693,53 +701,55 @@
             </div>
             <div class="soil-5-calculator">
                 <div class="site-title">
-                    <fieldset><legend><a name="use">林分年固土价值计算</a></legend></fieldset>
+                    <fieldset>
+                        <legend><a name="use">林分年固土价值计算</a></legend>
+                    </fieldset>
                 </div>
                 <div class="site-text site-block">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分面积</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">挖取运输土方所需费用</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">元.m<sup>-3</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">无林地土壤侵蚀模数</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>-2</sup>a<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林地土壤侵蚀模数</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>-2</sup>a<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林地土壤容重</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">t.m<sup>-3</sup></div>
                         </div>
-                        <div class="layui-form-item hidden">
-                            <div class="layui-input-inline">
-                                <input type="text" name="soil-5-calculator" required  value=" " lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
                         <div class="layui-form-item  block-display left-move">
                             <div class="layui-input-block">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button class="layui-btn submit-btn" lay-submit lay-filter="formDemo">立即提交</button>
                                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                             </div>
                         </div>
@@ -780,109 +790,119 @@
             </div>
             <div class="soil-6-calculator">
                 <div class="site-title">
-                    <fieldset><legend><a name="use">林分年保肥价值计算</a></legend></fieldset>
+                    <fieldset>
+                        <legend><a name="use">林分年保肥价值计算</a></legend>
+                    </fieldset>
                 </div>
                 <div class="site-text site-block">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分面积</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">无林地土壤侵蚀模数</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>-2</sup>a<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林地土壤侵蚀模数</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>-2</sup>a<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分土壤平均含氮量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">%</div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">磷酸二铵化肥价格</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">元.t<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">磷酸二铵化肥含氮量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">%</div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分土壤平均含磷量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">%</div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">磷酸二铵化肥含磷量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">%</div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分土壤平均含钾量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">%</div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">氯化钾化肥价格</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">元.t<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">氯化钾化肥含钾量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">%</div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分土壤有机质含量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">%</div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">有机质价格</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">元.t<sup>-1</sup></div>
                         </div>
-                        <div class="layui-form-item hidden">
-                            <div class="layui-input-inline">
-                                <input type="text" name="soil-6-calculator" required  value=" " lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
                         <div class="layui-form-item  block-display left-move">
                             <div class="layui-input-block">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button class="layui-btn submit-btn" lay-submit lay-filter="formDemo">立即提交</button>
                                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                             </div>
                         </div>
@@ -951,39 +971,40 @@
         <div class="carbon calculator">
             <div class="carbon-1-calculator">
                 <div class="site-title">
-                    <fieldset><legend><a name="use">植被年固碳量计算</a></legend></fieldset>
+                    <fieldset>
+                        <legend><a name="use">植被年固碳量计算</a></legend>
+                    </fieldset>
                 </div>
                 <div class="site-text site-block">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label">CO<sub>2</sub>中碳的含量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">%</div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分面积</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分净生产力</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
-                            <div class="layui-form-mid layui-word-aux" style="width: 65px;">t.hm<sup>-2</sup>.a<sup>-1</sup></div>
-                        </div>
-                        <div class="layui-form-item hidden">
-                            <div class="layui-input-inline">
-                                <input type="text" name="carbon-1-calculator" required  value=" " lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
-                            </div>
+                            <div class="layui-form-mid layui-word-aux" style="width: 65px;">
+                                t.hm<sup>-2</sup>.a<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item  block-display left-move">
                             <div class="layui-input-block">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button class="layui-btn submit-btn" lay-submit lay-filter="formDemo">立即提交</button>
                                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                             </div>
                         </div>
@@ -1018,32 +1039,32 @@
             </div>
             <div class="carbon-2-calculator">
                 <div class="site-title">
-                    <fieldset><legend><a name="use">土壤年固碳量计算</a></legend></fieldset>
+                    <fieldset>
+                        <legend><a name="use">土壤年固碳量计算</a></legend>
+                    </fieldset>
                 </div>
                 <div class="site-text site-block">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label label-special">林分面积</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label label-special">单位面积林分土壤年固碳量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
-                            <div class="layui-form-mid layui-word-aux" style="width: 65px;">t.hm<sup>-2</sup>.a<sup>-1</sup></div>
-                        </div>
-                        <div class="layui-form-item hidden">
-                            <div class="layui-input-inline">
-                                <input type="text" name="carbon-2-calculator" required  value=" " lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
-                            </div>
+                            <div class="layui-form-mid layui-word-aux" style="width: 65px;">
+                                t.hm<sup>-2</sup>.a<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item  block-display left-move">
                             <div class="layui-input-block">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button class="layui-btn submit-btn" lay-submit lay-filter="formDemo">立即提交</button>
                                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                             </div>
                         </div>
@@ -1075,53 +1096,57 @@
             </div>
             <div class="carbon-3-calculator">
                 <div class="site-title">
-                    <fieldset><legend><a name="use">林分年固碳价值计算</a></legend></fieldset>
+                    <fieldset>
+                        <legend><a name="use">林分年固碳价值计算</a></legend>
+                    </fieldset>
                 </div>
                 <div class="site-text site-block">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label label-special">林分面积</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label label-special">固碳价格</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">元.t<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label label-special">CO<sub>2</sub>中碳的含量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">%</div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label label-special">林分净生产力</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
-                            <div class="layui-form-mid layui-word-aux" style="width: 65px;">t.hm<sup>-2</sup>.a<sup>-1</sup></div>
+                            <div class="layui-form-mid layui-word-aux" style="width: 65px;">
+                                t.hm<sup>-2</sup>.a<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label label-special">单位面积林分土壤年固碳量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
-                            <div class="layui-form-mid layui-word-aux" style="width: 65px;">t.hm<sup>-2</sup>.a<sup>-1</sup></div>
-                        </div>
-                        <div class="layui-form-item hidden">
-                            <div class="layui-input-inline">
-                                <input type="text" name="carbon-3-calculator" required  value=" " lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
-                            </div>
+                            <div class="layui-form-mid layui-word-aux" style="width: 65px;">
+                                t.hm<sup>-2</sup>.a<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item  block-display left-move">
                             <div class="layui-input-block">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button class="layui-btn submit-btn" lay-submit lay-filter="formDemo">立即提交</button>
                                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                             </div>
                         </div>
@@ -1165,32 +1190,32 @@
         <div class="oxygen calculator">
             <div class="oxygen-1-calculator">
                 <div class="site-title">
-                    <fieldset><legend><a name="use">林分年释氧量计算</a></legend></fieldset>
+                    <fieldset>
+                        <legend><a name="use">林分年释氧量计算</a></legend>
+                    </fieldset>
                 </div>
                 <div class="site-text site-block">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分面积</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分净生产力</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
-                            <div class="layui-form-mid layui-word-aux" style="width: 65px;">t.hm<sup>-2</sup>.a<sup>-1</sup></div>
-                        </div>
-                        <div class="layui-form-item hidden">
-                            <div class="layui-input-inline">
-                                <input type="text" name="oxygen-1-calculator" required  value=" " lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
-                            </div>
+                            <div class="layui-form-mid layui-word-aux" style="width: 65px;">
+                                t.hm<sup>-2</sup>.a<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item  block-display left-move">
                             <div class="layui-input-block">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button class="layui-btn submit-btn" lay-submit lay-filter="formDemo">立即提交</button>
                                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                             </div>
                         </div>
@@ -1222,39 +1247,40 @@
             </div>
             <div class="oxygen-2-calculator">
                 <div class="site-title">
-                    <fieldset><legend><a name="use">林分年释氧价值计算</a></legend></fieldset>
+                    <fieldset>
+                        <legend><a name="use">林分年释氧价值计算</a></legend>
+                    </fieldset>
                 </div>
                 <div class="site-text site-block">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label">氧气价格</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">元.t<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分面积</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分净生产力</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
-                            <div class="layui-form-mid layui-word-aux" style="width: 65px;">t.hm<sup>-2</sup>.a<sup>-1</sup></div>
-                        </div>
-                        <div class="layui-form-item hidden">
-                            <div class="layui-input-inline">
-                                <input type="text" name="oxygen-2-calculator" required  value=" " lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
-                            </div>
+                            <div class="layui-form-mid layui-word-aux" style="width: 65px;">
+                                t.hm<sup>-2</sup>.a<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item  block-display left-move">
                             <div class="layui-input-block">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button class="layui-btn submit-btn" lay-submit lay-filter="formDemo">立即提交</button>
                                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                             </div>
                         </div>
@@ -1292,39 +1318,40 @@
         <div class="nutriment calculator">
             <div class="nutriment-1-calculator">
                 <div class="site-title">
-                    <fieldset><legend><a name="use">林分固氮量计算</a></legend></fieldset>
+                    <fieldset>
+                        <legend><a name="use">林分固氮量计算</a></legend>
+                    </fieldset>
                 </div>
                 <div class="site-text site-block">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分面积</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林木氮元素含量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">%</div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分净生产力</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
-                            <div class="layui-form-mid layui-word-aux" style="width: 65px;">t.hm<sup>-2</sup>.a<sup>-1</sup></div>
-                        </div>
-                        <div class="layui-form-item hidden">
-                            <div class="layui-input-inline">
-                                <input type="text" name="nutriment-1-calculator" required  value=" " lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
-                            </div>
+                            <div class="layui-form-mid layui-word-aux" style="width: 65px;">
+                                t.hm<sup>-2</sup>.a<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item  block-display left-move">
                             <div class="layui-input-block">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button class="layui-btn submit-btn" lay-submit lay-filter="formDemo">立即提交</button>
                                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                             </div>
                         </div>
@@ -1359,39 +1386,40 @@
             </div>
             <div class="nutriment-2-calculator">
                 <div class="site-title">
-                    <fieldset><legend><a name="use">林分固磷量计算</a></legend></fieldset>
+                    <fieldset>
+                        <legend><a name="use">林分固磷量计算</a></legend>
+                    </fieldset>
                 </div>
                 <div class="site-text site-block">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分面积</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林木磷元素含量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">%</div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分净生产力</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
-                            <div class="layui-form-mid layui-word-aux" style="width: 65px;">t.hm<sup>-2</sup>.a<sup>-1</sup></div>
-                        </div>
-                        <div class="layui-form-item hidden">
-                            <div class="layui-input-inline">
-                                <input type="text" name="nutriment-2-calculator" required  value=" " lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
-                            </div>
+                            <div class="layui-form-mid layui-word-aux" style="width: 65px;">
+                                t.hm<sup>-2</sup>.a<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item  block-display left-move">
                             <div class="layui-input-block">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button class="layui-btn submit-btn" lay-submit lay-filter="formDemo">立即提交</button>
                                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                             </div>
                         </div>
@@ -1426,39 +1454,40 @@
             </div>
             <div class="nutriment-3-calculator">
                 <div class="site-title">
-                    <fieldset><legend><a name="use">林分固钾量计算</a></legend></fieldset>
+                    <fieldset>
+                        <legend><a name="use">林分固钾量计算</a></legend>
+                    </fieldset>
                 </div>
                 <div class="site-text site-block">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分面积</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林木钾元素含量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">%</div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分净生产力</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
-                            <div class="layui-form-mid layui-word-aux" style="width: 65px;">t.hm<sup>-2</sup>.a<sup>-1</sup></div>
-                        </div>
-                        <div class="layui-form-item hidden">
-                            <div class="layui-input-inline">
-                                <input type="text" name="nutriment-3-calculator" required  value=" " lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
-                            </div>
+                            <div class="layui-form-mid layui-word-aux" style="width: 65px;">
+                                t.hm<sup>-2</sup>.a<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item  block-display left-move">
                             <div class="layui-input-block">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button class="layui-btn submit-btn" lay-submit lay-filter="formDemo">立即提交</button>
                                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                             </div>
                         </div>
@@ -1493,88 +1522,95 @@
             </div>
             <div class="nutriment-4-calculator">
                 <div class="site-title">
-                    <fieldset><legend><a name="use">林分年营养物质积累价值计算</a></legend></fieldset>
+                    <fieldset>
+                        <legend><a name="use">林分年营养物质积累价值计算</a></legend>
+                    </fieldset>
                 </div>
                 <div class="site-text site-block">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分面积</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分净生产力</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">t.hm<sup>-2</sup>.a<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林木含氮量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">%</div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">磷酸二铵化肥价格</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">元.t<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">磷酸二铵化肥含氮量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">%</div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林木含磷量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">%</div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">磷酸二铵化肥含磷量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">%</div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林木含钾量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">%</div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">氯化钾化肥价格</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">元.t<sup>-1</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">氯化钾化肥含钾量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">%</div>
                         </div>
-                        <div class="layui-form-item hidden">
-                            <div class="layui-input-inline">
-                                <input type="text" name="nutriment-4-calculator" required  value=" " lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
                         <div class="layui-form-item  block-display left-move">
                             <div class="layui-input-block">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button class="layui-btn submit-btn" lay-submit lay-filter="formDemo">立即提交</button>
                                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                             </div>
                         </div>
@@ -1633,46 +1669,47 @@
         <div class="ion calculator">
             <div class="ion-1-calculator">
                 <div class="site-title">
-                    <fieldset><legend><a name="use">林分年提供负离子个数计算</a></legend></fieldset>
+                    <fieldset>
+                        <legend><a name="use">林分年提供负离子个数计算</a></legend>
+                    </fieldset>
                 </div>
                 <div class="site-text site-block">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分负离子浓度</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">个.cm<sup>-3</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分面积</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">林分高度</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">m</div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label">负离子寿命</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux" style="width: 65px;">min</div>
                         </div>
-                        <div class="layui-form-item hidden">
-                            <div class="layui-input-inline">
-                                <input type="text" name="ion-1-calculator" required  value=" " lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
                         <div class="layui-form-item  block-display left-move">
                             <div class="layui-input-block">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button class="layui-btn submit-btn" lay-submit lay-filter="formDemo">立即提交</button>
                                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                             </div>
                         </div>
@@ -1713,32 +1750,32 @@
         <div class="pollution calculator">
             <div class="pollution-1-calculator">
                 <div class="site-title">
-                    <fieldset><legend><a name="use">林分年吸收二氧化硫量计算</a></legend></fieldset>
+                    <fieldset>
+                        <legend><a name="use">林分年吸收二氧化硫量计算</a></legend>
+                    </fieldset>
                 </div>
                 <div class="site-text site-block">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label label-special">单位面积林分吸收二氧化硫量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
-                            <div class="layui-form-mid layui-form-mid-special layui-word-aux">kg.hm<sup>-2</sup>.a<sup>-1</sup></div>
+                            <div class="layui-form-mid layui-form-mid-special layui-word-aux">kg.hm<sup>-2</sup>.a<sup>-1</sup>
+                            </div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label  label-special">林分面积</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></div>
                         </div>
-                        <div class="layui-form-item hidden">
-                            <div class="layui-input-inline">
-                                <input type="text" name="pollution-1-calculator" required  value=" " lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
                         <div class="layui-form-item  block-display left-move">
                             <div class="layui-input-block">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button class="layui-btn submit-btn" lay-submit lay-filter="formDemo">立即提交</button>
                                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                             </div>
                         </div>
@@ -1770,32 +1807,32 @@
             </div>
             <div class="pollution-2-calculator">
                 <div class="site-title">
-                    <fieldset><legend><a name="use">林分年吸收氟化物量计算</a></legend></fieldset>
+                    <fieldset>
+                        <legend><a name="use">林分年吸收氟化物量计算</a></legend>
+                    </fieldset>
                 </div>
                 <div class="site-text site-block">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label label-special">单位面积林分吸收氟化物量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
-                            <div class="layui-form-mid layui-form-mid-special layui-word-aux">kg.hm<sup>-2</sup>.a<sup>-1</sup></div>
+                            <div class="layui-form-mid layui-form-mid-special layui-word-aux">kg.hm<sup>-2</sup>.a<sup>-1</sup>
+                            </div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label  label-special">林分面积</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></div>
                         </div>
-                        <div class="layui-form-item hidden">
-                            <div class="layui-input-inline">
-                                <input type="text" name="pollution-2-calculator" required  value=" " lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
                         <div class="layui-form-item  block-display left-move">
                             <div class="layui-input-block">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button class="layui-btn submit-btn" lay-submit lay-filter="formDemo">立即提交</button>
                                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                             </div>
                         </div>
@@ -1827,32 +1864,32 @@
             </div>
             <div class="pollution-3-calculator">
                 <div class="site-title">
-                    <fieldset><legend><a name="use">林分年吸收氮氧化物量计算</a></legend></fieldset>
+                    <fieldset>
+                        <legend><a name="use">林分年吸收氮氧化物量计算</a></legend>
+                    </fieldset>
                 </div>
                 <div class="site-text site-block">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label label-special">单位面积林分年吸收氮氧化物量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
-                            <div class="layui-form-mid layui-form-mid-special layui-word-aux">kg.hm<sup>-2</sup>.a<sup>-1</sup></div>
+                            <div class="layui-form-mid layui-form-mid-special layui-word-aux">kg.hm<sup>-2</sup>.a<sup>-1</sup>
+                            </div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label  label-special">林分面积</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></div>
                         </div>
-                        <div class="layui-form-item hidden">
-                            <div class="layui-input-inline">
-                                <input type="text" name="pollution-3-calculator" required  value=" " lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
                         <div class="layui-form-item  block-display left-move">
                             <div class="layui-input-block">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button class="layui-btn submit-btn" lay-submit lay-filter="formDemo">立即提交</button>
                                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                             </div>
                         </div>
@@ -1884,32 +1921,32 @@
             </div>
             <div class="pollution-4-calculator">
                 <div class="site-title">
-                    <fieldset><legend><a name="use">林分年吸收重金属量计算</a></legend></fieldset>
+                    <fieldset>
+                        <legend><a name="use">林分年吸收重金属量计算</a></legend>
+                    </fieldset>
                 </div>
                 <div class="site-text site-block">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label label-special">单位面积林分年吸收重金属量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
-                            <div class="layui-form-mid layui-form-mid-special layui-word-aux">kg.hm<sup>-2</sup>.a<sup>-1</sup></div>
+                            <div class="layui-form-mid layui-form-mid-special layui-word-aux">kg.hm<sup>-2</sup>.a<sup>-1</sup>
+                            </div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label  label-special">林分面积</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></div>
                         </div>
-                        <div class="layui-form-item hidden">
-                            <div class="layui-input-inline">
-                                <input type="text" name="pollution-4-calculator" required  value=" " lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
                         <div class="layui-form-item  block-display left-move">
                             <div class="layui-input-block">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button class="layui-btn submit-btn" lay-submit lay-filter="formDemo">立即提交</button>
                                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                             </div>
                         </div>
@@ -1941,32 +1978,32 @@
             </div>
             <div class="pollution-5-calculator">
                 <div class="site-title">
-                    <fieldset><legend><a name="use">林分年滞尘量计算</a></legend></fieldset>
+                    <fieldset>
+                        <legend><a name="use">林分年滞尘量计算</a></legend>
+                    </fieldset>
                 </div>
                 <div class="site-text site-block">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label label-special">单位面积林分年滞尘量</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
-                            <div class="layui-form-mid layui-form-mid-special layui-word-aux">kg.hm<sup>-2</sup>.a<sup>-1</sup></div>
+                            <div class="layui-form-mid layui-form-mid-special layui-word-aux">kg.hm<sup>-2</sup>.a<sup>-1</sup>
+                            </div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label  label-special">林分面积</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="title" required  lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
+                                <input type="text" name="title" required lay-verify="required" placeholder="请输入数值"
+                                       autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-form-mid layui-word-aux">hm<sup>2</sup></div>
                         </div>
-                        <div class="layui-form-item hidden">
-                            <div class="layui-input-inline">
-                                <input type="text" name="pollution-5-calculator" required  value=" " lay-verify="required" placeholder="请输入数值" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
                         <div class="layui-form-item  block-display left-move">
                             <div class="layui-input-block">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button class="layui-btn submit-btn" lay-submit lay-filter="formDemo">立即提交</button>
                                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                             </div>
                         </div>
@@ -2002,7 +2039,9 @@
         <!--生成表格-->
         <div class="summary-sheet ">
             <div class="site-title">
-                <fieldset><legend><a name="use">总表</a></legend></fieldset>
+                <fieldset>
+                    <legend><a name="use">总表</a></legend>
+                </fieldset>
             </div>
             <div class="site-text">
                 <table class="layui-table">
@@ -2231,15 +2270,9 @@
         </div>
     </div>
 </div>
-<script src="statics/js/jquery.min.js"></script>
-<script src="statics/js/jquery.form.js"></script>
-<script src="statics/js/layui.all.js"></script>
-<script src="statics/js/index/index.js"></script>
-<script>
-    //JavaScript代码区域
-    layui.use('element', function(){
-        var element = layui.element;
-    });
-</script>
+<script src="./statics/js/jquery.min.js"></script>
+<script src="./statics/js/jquery.form.js"></script>
+<script src="./statics/js/layui.all.js"></script>
+<script src="./statics/js/index/index.js"></script>
 </body>
 </html>
