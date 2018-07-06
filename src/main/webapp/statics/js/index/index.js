@@ -80,8 +80,9 @@ layui.use('element', function () {
             url: "/servlet/CalcServlet",
             type: "post",
             dataType: "json",
-            beforeSubmit: function (formData) {
+            beforeSubmit: function (formData, form) {
                 console.log(formData);
+                console.log(form);
                 for (var i = 0; i < formData.length; ++i) {
                     $tds[i].innerHTML = formData[i].value;
                 }
