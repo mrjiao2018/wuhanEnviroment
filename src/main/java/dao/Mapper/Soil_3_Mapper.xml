@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.Mapper.Soil_3_Mapper">
+    <!--根据id查询数据-->
+    <select id="select" resultType="vo.soil.Soil_3_calculator">
+        select * from soil_3_calculator where year=#{year}
+    </select>
+
+    <insert id="insert" parameterType="vo.soil.Soil_3_calculator">
+        insert into soil_3_calculator values (#{a},#{x1},#{x2},#{p},#{year},#{position},#{result})
+    </insert>
+
+
+</mapper>

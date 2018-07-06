@@ -36,7 +36,7 @@
     <script type="text/javascript">
         $(function(){
             $("form").eq(0).ajaxForm({
-                url: "/mrjiao",
+                url: "/servlet/LoginServlet",
                 type: "post",
                 dataType: "json",
                 beforeSubmit:function(formData){
@@ -51,10 +51,10 @@
                 },
                 success: function(responseText) {
                     var status = responseText.status;
-                    if(status == 600){
+                    if(status == 700){
                         $("#error").html("<div style='padding-top: 20px'><span style='color:red;'>用户名或密码错误</span></div>");
                     }
-                    else if(status == 700){
+                    else if(status == 600){
                         window.location.href = "./nav.html"
                     }
                 }

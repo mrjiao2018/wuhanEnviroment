@@ -14,7 +14,8 @@ public class Nutriment_4_calculator {
     private double p;
     private double k;
     private String year;
-    private Map map;
+    private String position;
+    private double result;
 
     public Nutriment_4_calculator(Map jsonMap){
         a=Double.parseDouble(jsonMap.get("A").toString());
@@ -27,20 +28,29 @@ public class Nutriment_4_calculator {
         n=Double.parseDouble(jsonMap.get("N").toString());
         p=Double.parseDouble(jsonMap.get("P").toString());
         k=Double.parseDouble(jsonMap.get("K").toString());
-        this.map=jsonMap;
+    }
+
+    public Nutriment_4_calculator(float a, float b, float c1, float c2, float r1, float r2, float r3, float n, float p, float k, String year, String position, float result) {
+        this.a = a;
+        this.b = b;
+        this.c1 = c1;
+        this.c2 = c2;
+        this.r1 = r1;
+        this.r2 = r2;
+        this.r3 = r3;
+        this.n = n;
+        this.p = p;
+        this.k = k;
+        this.year = year;
+        this.position = position;
+        this.result = result;
     }
 
     public double calc(){
-        double result =a*b*(n*c1/r1+p*c1/r2+k*c2/r3);
-        map.put("result",result);
+        result =a*b*(n*c1/r1+p*c1/r2+k*c2/r3);
         return result;
-    }
-    public Map getMap() {
-        return map;
     }
     public void setYear(String year){
         this.year=year;
-        map.put("year",year);
-        map.put("position","梁子湖");
     }
 }

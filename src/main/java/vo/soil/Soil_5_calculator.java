@@ -9,7 +9,8 @@ public class Soil_5_calculator {
     private double ctu;
     private double p;
     private String year;
-    private Map map;
+    private String position;
+    private double result;
 
     public Soil_5_calculator(Map jsonMap){
         a=Double.parseDouble(jsonMap.get("A").toString());
@@ -17,20 +18,26 @@ public class Soil_5_calculator {
         x2=Double.parseDouble(jsonMap.get("X2").toString());
         ctu=Double.parseDouble(jsonMap.get("CTu").toString());
         p=Double.parseDouble(jsonMap.get("p").toString());
-        this.map=jsonMap;
     }
-    public Map getMap() {
-        return map;
+
+    public Soil_5_calculator(float a, float x1, float x2, float ctu, float p, String year, String position, float result) {
+        this.a = a;
+        this.x1 = x1;
+        this.x2 = x2;
+        this.ctu = ctu;
+        this.p = p;
+        this.year = year;
+        this.position = position;
+        this.result = result;
     }
+
     public double calc(){
-        double result =a*ctu*(x1-x2)/p;
-        map.put("result",result);
+        result =a*ctu*(x1-x2)/p;
         return result;
     }
 
     public void setYear(String year){
         this.year=year;
-        map.put("year",year);
-        map.put("position","梁子湖");
+
     }
 }
