@@ -9,7 +9,8 @@ public class Carbon_3_calculator {
     private double r;
     private double b;
     private String year;
-    private Map map;
+    private String position;
+    private double result;
 
     public Carbon_3_calculator(Map jsonMap){
         a=Double.parseDouble(jsonMap.get("A").toString());
@@ -17,20 +18,25 @@ public class Carbon_3_calculator {
         c=Double.parseDouble(jsonMap.get("C").toString());
         r=Double.parseDouble(jsonMap.get("R").toString());
         b=Double.parseDouble(jsonMap.get("B").toString());
-        this.map=jsonMap;
     }
-    public Map getMap() {
-        return map;
+
+    public Carbon_3_calculator(float a, float f, float c, float r, float b, String year, String position, float result) {
+        this.a = a;
+        this.f = f;
+        this.c = c;
+        this.r = r;
+        this.b = b;
+        this.year = year;
+        this.position = position;
+        this.result = result;
     }
+
     public double calc(){
-        double result =a*c*(1.63*r*b+f);
-        map.put("result",result);
+        result =a*c*(1.63*r*b+f);
         return result;
     }
 
     public void setYear(String year){
         this.year=year;
-        map.put("year",year);
-        map.put("position","梁子湖");
     }
 }

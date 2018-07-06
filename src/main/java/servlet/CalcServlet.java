@@ -1,8 +1,8 @@
 package servlet;
 
-import calc.CalcService;
 import com.google.gson.Gson;
-import temp.CurRecords;
+import temp.TableItemManager;
+import vo.TableItem;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -21,9 +21,8 @@ import javax.servlet.annotation.WebServlet;
 public class CalcServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        Cookie[] cs = request.getCookies();
-        String username=cs[0].getValue();
-
+        String username=(String) request.getSession().getAttribute("user");
+        System.out.println(username);
         Enumeration parameterNames = request.getParameterNames();
         Map map=new HashMap<String,String>();
         String className="";
@@ -41,10 +40,10 @@ public class CalcServlet extends HttpServlet {
             Constructor<?> constructor = c.getDeclaredConstructor(Map.class);
             constructor.setAccessible(true);
 
-            Object o=constructor.newInstance(map);
+            TableItem o=(TableItem) constructor.newInstance(map);
             float result= (float)method.invoke(o);
-
-            CurRecords.add(username,o);
+            TableItemManager.addItem(username,o);
+            //CurRecords.add(username,o);
             Map resultMap=new HashMap<String,Float>();
             resultMap.put("result",result);
 

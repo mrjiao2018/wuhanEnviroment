@@ -7,26 +7,30 @@ public class Oxygen_2_calculator {
     private double b;
     private double c;
     private String year;
-    private Map map;
+    private String position;
+    private double result;
 
     public Oxygen_2_calculator(Map jsonMap){
         a=Double.parseDouble(jsonMap.get("A").toString());
         b=Double.parseDouble(jsonMap.get("B").toString());
         c=Double.parseDouble(jsonMap.get("C").toString());
-        this.map=jsonMap;
     }
-    public Map getMap() {
-        return map;
+
+    public Oxygen_2_calculator(float a, float b, float c, String year, String position, float result) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+        this.year = year;
+        this.position = position;
+        this.result = result;
     }
+
     public double calc(){
-        double result =1.19*c*a*b;
-        map.put("result",result);
+        result =1.19*c*a*b;
         return result;
     }
 
     public void setYear(String year){
         this.year=year;
-        map.put("year",year);
-        map.put("position","梁子湖");
     }
 }

@@ -7,26 +7,30 @@ public class Nutriment_3_calculator {
     private double b;
     private double k;
     private String year;
-    private Map map;
+    private String position;
+    private double result;
 
     public Nutriment_3_calculator(Map jsonMap){
         a=Double.parseDouble(jsonMap.get("A").toString());
         b=Double.parseDouble(jsonMap.get("B").toString());
         k=Double.parseDouble(jsonMap.get("K").toString());
-        this.map=jsonMap;
     }
-    public Map getMap() {
-        return map;
+
+    public Nutriment_3_calculator(float a, float b, float k, String year, String position, float result) {
+        this.a = a;
+        this.b = b;
+        this.k = k;
+        this.year = year;
+        this.position = position;
+        this.result = result;
     }
+
     public double calc(){
-        double result =a*k*b;
-        map.put("result",result);
+        result =a*k*b;
         return result;
     }
 
     public void setYear(String year){
         this.year=year;
-        map.put("year",year);
-        map.put("position","梁子湖");
     }
 }

@@ -17,7 +17,8 @@ public class Soil_6_calculator {
     private double k;
     private double m;
     private String year;
-    private Map map;
+    private String position;
+    private double result;
 
     public Soil_6_calculator(Map jsonMap){
         a=Double.parseDouble(jsonMap.get("A").toString());
@@ -34,20 +35,33 @@ public class Soil_6_calculator {
         k=Double.parseDouble(jsonMap.get("K").toString());
         m=Double.parseDouble(jsonMap.get("M").toString());
 
-        this.map=jsonMap;
     }
-    public Map getMap() {
-        return map;
+
+    public Soil_6_calculator(float a, float x1, float x2, float c1, float c2, float c3, float r1, float r2, float r3, float n, float p, float k, float m, String year, String position, float result) {
+        this.a = a;
+        this.x1 = x1;
+        this.x2 = x2;
+        this.c1 = c1;
+        this.c2 = c2;
+        this.c3 = c3;
+        this.r1 = r1;
+        this.r2 = r2;
+        this.r3 = r3;
+        this.n = n;
+        this.p = p;
+        this.k = k;
+        this.m = m;
+        this.year = year;
+        this.position = position;
+        this.result = result;
     }
+
     public double calc(){
-        double result =a*(x2-x1)*(n*c1/r1+p*c1/r2+k*c2/r3+ m*c3);
-        map.put("result",result);
+        result =a*(x2-x1)*(n*c1/r1+p*c1/r2+k*c2/r3+ m*c3);
         return result;
     }
 
     public void setYear(String year){
         this.year=year;
-        map.put("year",year);
-        map.put("position","梁子湖");
     }
 }
