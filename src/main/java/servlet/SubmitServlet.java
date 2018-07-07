@@ -17,7 +17,7 @@ public class SubmitServlet extends HttpServlet {
     }
 //提交表持久化
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username=request.getCookies()[0].getValue();
+        String username=(String) request.getSession().getAttribute("user");
         TableItemManager.store(username);
     }
 }

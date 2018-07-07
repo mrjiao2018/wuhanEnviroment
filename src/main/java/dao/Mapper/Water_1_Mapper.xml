@@ -4,11 +4,11 @@
 
 <mapper namespace="dao.Mapper.Water_1_Mapper">
     <!--根据id查询数据-->
-    <select id="select" resultType="vo.water.Water_1_calculator">
+    <select id="select" resultType="vo.Water_1_calculator">
         select * from water_1_calculator where year=#{year}
     </select>
 
-    <insert id="insert" parameterType="vo.water.Water_1_calculator">
+    <insert id="insert" parameterType="vo.Water_1_calculator">
         insert into water_1_calculator values (#{a},#{p},#{e},#{c},#{year},#{position},#{result})
     </insert>
 

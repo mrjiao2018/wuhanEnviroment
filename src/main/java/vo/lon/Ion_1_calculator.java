@@ -1,8 +1,10 @@
 package vo.lon;
 
+import vo.TableItem;
+
 import java.util.Map;
 
-public class Ion_1_calculator {
+public class Ion_1_calculator implements TableItem {
     private double a;
     private double h;
     private double l;
@@ -31,6 +33,11 @@ public class Ion_1_calculator {
     public double calc(){
         result =5.256E15*q*a*h/l;
         return result;
+    }
+
+    @Override
+    public void store() {
+
     }
 
     public void setYear(String year){

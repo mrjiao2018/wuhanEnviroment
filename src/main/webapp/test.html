@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="statics/js/jquery.min.js"></script>
+</head>
+<body>
+<script >
+    window.onload=function (ev) {
+        $.get("/servlet/SubmitServlet",function(data,status){
+            alert("数据: " + data + "\n状态: " + status);
+        });
+    }
+</script>
+</body>
+</html>

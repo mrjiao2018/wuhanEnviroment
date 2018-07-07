@@ -1,8 +1,10 @@
 package vo.nutriment;
 
+import vo.TableItem;
+
 import java.util.Map;
 
-public class Nutriment_1_calculator {
+public class Nutriment_1_calculator implements TableItem {
     private double a;
     private double b;
     private double n;
@@ -28,6 +30,11 @@ public class Nutriment_1_calculator {
     public double calc(){
         result =a*n*b;
         return result;
+    }
+
+    @Override
+    public void store() {
+
     }
 
     public void setYear(String year){

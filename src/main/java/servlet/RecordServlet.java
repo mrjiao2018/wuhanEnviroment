@@ -18,17 +18,18 @@ import java.io.IOException;
 @WebServlet(name = "RecordServlet",urlPatterns = {"/servlet/RecordServlet"})
 public class RecordServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request,response);
+        this.doGet(request, response);
     }
 //load时请求，year，position，type
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println(0);
         request.setCharacterEncoding("UTF-8");
         String year=request.getParameter("year");
         String username=(String)request.getSession().getAttribute("user");
         String position=request.getParameter("position");
         String type=request.getParameter("type");
 
-        CurUser curUser=new CurUser(username,position,type);
+        CurUser curUser=new CurUser(username,year,position,type);
         TableItemManager.add(curUser);
 
         Gson gson=new Gson();

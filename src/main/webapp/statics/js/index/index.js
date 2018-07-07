@@ -11,15 +11,17 @@ layui.use('element', function () {
             type: "forest"
         };
         //todo finish the url
-        // var options = {
-        //     url:"",
-        //     data:JSON.stringify(request_data),
-        //     dataType:"json",
-        //     success:function (data) {
-        //         form_data = data;
-        //     }
-        // };
-        // $.ajax(options);
+        var options = {
+            url:"/servlet/RecordServlet",
+            method:"post",
+            data:JSON.stringify(request_data),
+             dataType:"json",
+             success:function (data) {
+                form_data = data;
+                console.log(data);
+            }
+        };
+        $.ajax(options);
     });
 
 

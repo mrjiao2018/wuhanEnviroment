@@ -1,8 +1,10 @@
 package vo.carbon;
 
+import vo.TableItem;
+
 import java.util.Map;
 
-public class Carbon_3_calculator {
+public class Carbon_3_calculator implements TableItem {
     private double a;
     private double f;
     private double c;
@@ -34,6 +36,11 @@ public class Carbon_3_calculator {
     public double calc(){
         result =a*c*(1.63*r*b+f);
         return result;
+    }
+
+    @Override
+    public void store() {
+
     }
 
     public void setYear(String year){

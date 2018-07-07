@@ -34,4 +34,9 @@ public class forest_2_calculator implements TableItem {
     public void store() {
 
     }
+
+    @Override
+    public void setYear(String year) {
+        this.year=year;
+    }
 }

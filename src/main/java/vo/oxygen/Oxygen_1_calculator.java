@@ -1,8 +1,10 @@
 package vo.oxygen;
 
+import vo.TableItem;
+
 import java.util.Map;
 
-public class Oxygen_1_calculator {
+public class Oxygen_1_calculator implements TableItem {
     private double a;
     private double b;
     private String year;
@@ -25,6 +27,11 @@ public class Oxygen_1_calculator {
     public double calc(){
         result =1.19*a*b;
         return result;
+    }
+
+    @Override
+    public void store() {
+
     }
 
     public void setYear(String year){

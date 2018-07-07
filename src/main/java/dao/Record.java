@@ -2,13 +2,15 @@ package dao;
 
 import dao.Mapper.*;
 import org.apache.ibatis.session.SqlSession;
+import vo.Water_1_calculator;
+import vo.Water_2_calculator;
+import vo.Water_3_calculator;
 import vo.carbon.*;
 import vo.lon.*;
 import vo.nutriment.*;
 import vo.oxygen.*;
 import vo.pollution.*;
 import vo.soil.*;
-import vo.water.*;
 
 public class Record {
 

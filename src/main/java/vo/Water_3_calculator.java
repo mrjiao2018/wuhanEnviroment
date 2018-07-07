@@ -1,4 +1,4 @@
-package vo.water;
+package vo;
 
 import java.util.Map;
 
