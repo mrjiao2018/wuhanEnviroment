@@ -31,8 +31,7 @@ public class TableItemManager {
     }
 
     public static void store(String username){
-        for (CurUser c :curUsers
-                ) {
+        for (CurUser c :curUsers ) {
             if (c.getUsername().equals(username)){
                 c.store();
                 curUsers.remove(c);

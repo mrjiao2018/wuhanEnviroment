@@ -22,12 +22,16 @@ public class RecordServlet extends HttpServlet {
     }
 //load时请求，year，position，type
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println(0);
         request.setCharacterEncoding("UTF-8");
         String year=request.getParameter("year");
         String username=(String)request.getSession().getAttribute("user");
         String position=request.getParameter("position");
         String type=request.getParameter("type");
+
+        //test
+        System.out.println(year);
+        System.out.println(position);
+        System.out.println(type);
 
         CurUser curUser=new CurUser(username,year,position,type);
         TableItemManager.add(curUser);

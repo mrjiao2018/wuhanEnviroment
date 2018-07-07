@@ -14,7 +14,7 @@ layui.use('element', function () {
         var options = {
             url:"/servlet/RecordServlet",
             method:"post",
-            data:JSON.stringify(request_data),
+            data:request_data,
              dataType:"json",
              success:function (data) {
                 form_data = data;
