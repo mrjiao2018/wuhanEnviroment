@@ -1,30 +1,37 @@
-package vo.pollution;
+package vo;
+
+import vo.TableItem;
 
 import java.util.Map;
 
-public class Pollution_2_calculator {
+public class Oxygen_1_calculator implements TableItem {
     private double a;
-    private double q;
+    private double b;
     private String year;
     private String position;
     private double result;
 
-    public Pollution_2_calculator(Map jsonMap){
+    public Oxygen_1_calculator(Map jsonMap){
         a=Double.parseDouble(jsonMap.get("A").toString());
-        q=Double.parseDouble(jsonMap.get("Q").toString());
+        b=Double.parseDouble(jsonMap.get("B").toString());
     }
 
-    public Pollution_2_calculator(float a, float q, String year, String position, float result) {
+    public Oxygen_1_calculator(float a, float b, String year, String position, float result) {
         this.a = a;
-        this.q = q;
+        this.b = b;
         this.year = year;
         this.position = position;
         this.result = result;
     }
 
     public double calc(){
-        result =a*q;
+        result =1.19*a*b;
         return result;
+    }
+
+    @Override
+    public void store() {
+
     }
 
     public void setYear(String year){

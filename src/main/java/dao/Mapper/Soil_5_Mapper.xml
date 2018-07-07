@@ -4,11 +4,11 @@
 
 <mapper namespace="dao.Mapper.Soil_5_Mapper">
     <!--根据id查询数据-->
-    <select id="select" resultType="vo.soil.Soil_5_calculator">
+    <select id="select" resultType="vo.Soil_5_calculator">
         select * from soil_5_calculator where year=#{year}
     </select>
 
-    <insert id="insert" parameterType="vo.soil.Soil_5_calculator">
+    <insert id="insert" parameterType="vo.Soil_5_calculator">
         insert into soil_5_calculator values (#{a},#{x1},#{x2},#{c},#{p},#{year},#{position},#{result})
     </insert>
 

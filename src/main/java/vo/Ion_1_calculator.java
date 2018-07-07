@@ -1,4 +1,4 @@
-package vo.lon;
+package vo;
 
 import vo.TableItem;
 

@@ -1,4 +1,4 @@
-package vo.carbon;
+package vo;
 
 import dao.Mapper.Carbon_1_Mapper;
 import dao.SessionFactory;

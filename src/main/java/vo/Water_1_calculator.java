@@ -41,7 +41,8 @@ public class Water_1_calculator implements TableItem{
     public void store() {
         SqlSession sqlSession= SessionFactory.getSession();
         Water_1_Mapper water_1_mapper=sqlSession.getMapper(Water_1_Mapper.class);
-        water_1_mapper.insert(this);
+        System.out.println( water_1_mapper.insert(this));
+        sqlSession.commit();
     }
 
     public void setYear(String year){

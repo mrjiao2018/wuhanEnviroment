@@ -1,36 +1,35 @@
-package vo.soil;
+package vo;
 
 import java.util.Map;
 
-public class Soil_4_calculator {
+public class Soil_3_calculator {
     private double a;
     private double x1;
     private double x2;
-    private double k;
+    private double p;
     private String year;
     private String position;
     private double result;
 
-
-    public Soil_4_calculator(Map jsonMap){
+    public Soil_3_calculator(Map jsonMap){
         a=Double.parseDouble(jsonMap.get("A").toString());
         x1=Double.parseDouble(jsonMap.get("X1").toString());
         x2=Double.parseDouble(jsonMap.get("X2").toString());
-        k=Double.parseDouble(jsonMap.get("K").toString());
+        p=Double.parseDouble(jsonMap.get("P").toString());
     }
 
-    public Soil_4_calculator(float a, float x1, float x2, float k, String year, String position, float result) {
+    public Soil_3_calculator(float a, float x1, float x2, float p, String year, String position, float result) {
         this.a = a;
         this.x1 = x1;
         this.x2 = x2;
-        this.k = k;
+        this.p = p;
         this.year = year;
         this.position = position;
         this.result = result;
     }
 
-    public double clac(){
-        result =a*k*(x1-x2);
+    public double calc(){
+        result =a*p*(x1-x2);
         return result;
     }
 

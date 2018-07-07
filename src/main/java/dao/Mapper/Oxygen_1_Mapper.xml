@@ -4,11 +4,11 @@
 
 <mapper namespace="dao.Mapper.Oxygen_1_Mapper">
     <!--根据id查询数据-->
-    <select id="select" resultType="vo.oxygen.Oxygen_1_calculator">
+    <select id="select" resultType="vo.Oxygen_1_calculator">
         select * from oxygen_1_calculator where year=#{year}
     </select>
 
-    <insert id="insert" parameterType="vo.oxygen.Oxygen_1_calculator">
+    <insert id="insert" parameterType="vo.Oxygen_1_calculator">
         insert into oxygen_1_calculator values (#{a},#{b},#{year},#{position},#{result})
     </insert>
 

@@ -1,6 +1,6 @@
 package dao.Mapper;
 
-import vo.pollution.Pollution_4_calculator;
+import vo.Pollution_4_calculator;
 
 public interface Pollution_4_Mapper {
     Pollution_4_calculator select(String year);

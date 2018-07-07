@@ -1,4 +1,4 @@
-package vo.nutriment;
+package vo;
 
 import vo.TableItem;
 

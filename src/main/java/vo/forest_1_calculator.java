@@ -1,4 +1,4 @@
-package vo.forest;
+package vo;
 
 import vo.TableItem;
 

@@ -1,6 +1,6 @@
 package dao.Mapper;
 
-import vo.oxygen.Oxygen_2_calculator;
+import vo.Oxygen_2_calculator;
 
 public interface Oxygen_2_Mapper {
     Oxygen_2_calculator select(String year);

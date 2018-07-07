@@ -1,4 +1,4 @@
-package vo.soil;
+package vo;
 
 import java.util.Map;
 

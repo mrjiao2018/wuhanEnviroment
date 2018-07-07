@@ -1,29 +1,32 @@
-package vo.pollution;
+package vo;
 
 import java.util.Map;
 
-public class Pollution_1_calculator {
+public class Soil_1_calculator {
     private double a;
-    private double q;
+    private double x1;
+    private double x2;
     private String year;
     private String position;
     private double result;
 
-    public Pollution_1_calculator(Map jsonMap){
+    public Soil_1_calculator(Map jsonMap){
         a=Double.parseDouble(jsonMap.get("A").toString());
-        q=Double.parseDouble(jsonMap.get("Q").toString());
+        x1=Double.parseDouble(jsonMap.get("X1").toString());
+        x2=Double.parseDouble(jsonMap.get("X2").toString());
     }
 
-    public Pollution_1_calculator(float a, float q, String year, String position, float result) {
+    public Soil_1_calculator(float a, float x1, float x2, String year, String position, float result) {
         this.a = a;
-        this.q = q;
+        this.x1 = x1;
+        this.x2 = x2;
         this.year = year;
         this.position = position;
         this.result = result;
     }
 
     public double calc(){
-        result =a*q;
+        result =a*(x1-x2);
         return result;
     }
 

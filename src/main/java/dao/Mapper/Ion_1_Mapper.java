@@ -1,6 +1,6 @@
 package dao.Mapper;
 
-import vo.lon.Ion_1_calculator;
+import vo.Ion_1_calculator;
 
 public interface Ion_1_Mapper {
     Ion_1_calculator select(String year);

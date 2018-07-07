@@ -1,34 +1,34 @@
-package vo.oxygen;
+package vo;
 
 import vo.TableItem;
 
 import java.util.Map;
 
-public class Oxygen_2_calculator implements TableItem {
+public class Nutriment_3_calculator implements TableItem {
     private double a;
     private double b;
-    private double c;
+    private double k;
     private String year;
     private String position;
     private double result;
 
-    public Oxygen_2_calculator(Map jsonMap){
+    public Nutriment_3_calculator(Map jsonMap){
         a=Double.parseDouble(jsonMap.get("A").toString());
         b=Double.parseDouble(jsonMap.get("B").toString());
-        c=Double.parseDouble(jsonMap.get("C").toString());
+        k=Double.parseDouble(jsonMap.get("K").toString());
     }
 
-    public Oxygen_2_calculator(float a, float b, float c, String year, String position, float result) {
+    public Nutriment_3_calculator(float a, float b, float k, String year, String position, float result) {
         this.a = a;
         this.b = b;
-        this.c = c;
+        this.k = k;
         this.year = year;
         this.position = position;
         this.result = result;
     }
 
     public double calc(){
-        result =1.19*c*a*b;
+        result =a*k*b;
         return result;
     }
 
