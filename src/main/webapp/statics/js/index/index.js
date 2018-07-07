@@ -64,6 +64,7 @@ layui.use('element', function () {
 
         //提交表单
         for (var k = 0; k < calculatorArr.length; ++k) {
+            //calculatorArr[k].find(".submit-btn").eq(0).click(submitForm(calculatorArr[k]));
             submitForm(calculatorArr[k]);
         }
 
