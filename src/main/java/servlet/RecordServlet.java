@@ -28,11 +28,6 @@ public class RecordServlet extends HttpServlet {
         String position=request.getParameter("position");
         String type=request.getParameter("type");
 
-        //test
-        System.out.println(year);
-        System.out.println(position);
-        System.out.println(type);
-
         CurUser curUser=new CurUser(username,year,position,type);
         TableItemManager.add(curUser);
 
