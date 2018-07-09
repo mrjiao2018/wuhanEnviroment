@@ -1,8 +1,13 @@
 package vo;
 
+import com.google.gson.Gson;
+import dao.Mapper.Pollution_1_Mapper;
+import org.apache.ibatis.session.SqlSession;
+
+import java.util.HashMap;
 import java.util.Map;
 
-public class Pollution_1_calculator {
+public class Pollution_1_calculator implements TableItem {
     private double a;
     private double q;
     private String year;
@@ -22,9 +27,19 @@ public class Pollution_1_calculator {
         this.result = result;
     }
 
-    public double calc(){
+    public String calc(){
         result =a*q;
-        return result;
+        Map resultMap=new HashMap<String,Float>();
+        resultMap.put("result",result);
+
+        Gson gson=new Gson();
+        return gson.toJson(resultMap);
+    }
+
+    @Override
+    public void store(SqlSession sqlSession) {
+        Pollution_1_Mapper pollution_1_mapper=sqlSession.getMapper(Pollution_1_Mapper.class);
+        pollution_1_mapper.insert(this);
     }
 
     public void setYear(String year){

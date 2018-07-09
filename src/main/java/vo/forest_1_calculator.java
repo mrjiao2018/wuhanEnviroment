@@ -1,7 +1,10 @@
 package vo;
 
+import com.google.gson.Gson;
+import org.apache.ibatis.session.SqlSession;
 import vo.TableItem;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class forest_1_calculator implements TableItem {
@@ -28,13 +31,17 @@ public class forest_1_calculator implements TableItem {
     }
 
     @Override
-    public double calc() {
+    public String calc() {
         result=m*f*am;
-        return result;
+        Map resultMap=new HashMap<String,Float>();
+        resultMap.put("result",result);
+
+        Gson gson=new Gson();
+        return gson.toJson(resultMap);
     }
 
     @Override
-    public void store() {
+    public void store(SqlSession sqlSession) {
 
     }
 

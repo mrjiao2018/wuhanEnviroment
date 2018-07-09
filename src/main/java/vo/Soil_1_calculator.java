@@ -1,8 +1,13 @@
 package vo;
 
+import com.google.gson.Gson;
+import dao.Mapper.Soil_1_Mapper;
+import org.apache.ibatis.session.SqlSession;
+
+import java.util.HashMap;
 import java.util.Map;
 
-public class Soil_1_calculator {
+public class Soil_1_calculator implements  TableItem{
     private double a;
     private double x1;
     private double x2;
@@ -25,9 +30,19 @@ public class Soil_1_calculator {
         this.result = result;
     }
 
-    public double calc(){
+    public String calc(){
         result =a*(x1-x2);
-        return result;
+        Map resultMap=new HashMap<String,Float>();
+        resultMap.put("result",result);
+
+        Gson gson=new Gson();
+        return gson.toJson(resultMap);
+    }
+
+    @Override
+    public void store(SqlSession sqlSession) {
+        Soil_1_Mapper soil_1_mapper=sqlSession.getMapper(Soil_1_Mapper.class);
+        soil_1_mapper.insert(this);
     }
 
     public void setYear(String year){
