@@ -22,7 +22,6 @@ public class RecordServlet extends HttpServlet {
     }
 //load时请求，year，position，type
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println(0);
         request.setCharacterEncoding("UTF-8");
         String year=request.getParameter("year");
         String username=(String)request.getSession().getAttribute("user");

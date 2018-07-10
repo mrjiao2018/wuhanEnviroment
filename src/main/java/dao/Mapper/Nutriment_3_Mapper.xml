@@ -4,11 +4,11 @@
 
 <mapper namespace="dao.Mapper.Nutriment_3_Mapper">
     <!--根据id查询数据-->
-    <select id="select" resultType="vo.nutriment.Nutriment_3_calculator">
+    <select id="select" resultType="vo.Nutriment_3_calculator">
         select * from nutriment_3_calculator where year=#{year}
     </select>
 
-    <insert id="insert" parameterType="vo.nutriment.Nutriment_3_calculator">
+    <insert id="insert" parameterType="vo.Nutriment_3_calculator">
         insert into nutriment_3_calculator values (#{a},#{b},#{k},#{year},#{position},#{result});
     </insert>
 

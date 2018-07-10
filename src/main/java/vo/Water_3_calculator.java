@@ -1,8 +1,13 @@
 package vo;
 
+import com.google.gson.Gson;
+import dao.Mapper.Water_3_Mapper;
+import org.apache.ibatis.session.SqlSession;
+
+import java.util.HashMap;
 import java.util.Map;
 
-public class Water_3_calculator {
+public class Water_3_calculator implements TableItem {
     private double a;
     private double p;
     private double e;
@@ -31,9 +36,19 @@ public class Water_3_calculator {
         this.result = result;
     }
 
-    public double calc(){
+    public String calc(){
         result =10*k*a*(p-e-c);
-        return result;
+        Map resultMap=new HashMap<String,Float>();
+        resultMap.put("result",result);
+
+        Gson gson=new Gson();
+        return gson.toJson(resultMap);
+    }
+
+    @Override
+    public void store(SqlSession sqlSession) {
+        Water_3_Mapper water_3_mapper=sqlSession.getMapper(Water_3_Mapper.class);
+        water_3_mapper.insert(this);
     }
 
     public void setYear(String year){

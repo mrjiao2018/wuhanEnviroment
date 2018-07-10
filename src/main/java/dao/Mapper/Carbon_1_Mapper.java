@@ -1,6 +1,6 @@
 package dao.Mapper;
 
-import vo.carbon.Carbon_1_calculator;
+import vo.Carbon_1_calculator;
 
 public interface Carbon_1_Mapper {
     Carbon_1_calculator select(String year);

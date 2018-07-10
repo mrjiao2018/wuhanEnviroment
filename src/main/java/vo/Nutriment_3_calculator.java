@@ -1,7 +1,11 @@
-package vo.nutriment;
+package vo;
 
+import com.google.gson.Gson;
+import dao.Mapper.Nutriment_3_Mapper;
+import org.apache.ibatis.session.SqlSession;
 import vo.TableItem;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Nutriment_3_calculator implements TableItem {
@@ -27,14 +31,19 @@ public class Nutriment_3_calculator implements TableItem {
         this.result = result;
     }
 
-    public double calc(){
+    public String calc(){
         result =a*k*b;
-        return result;
+        Map resultMap=new HashMap<String,Float>();
+        resultMap.put("result",result);
+
+        Gson gson=new Gson();
+        return gson.toJson(resultMap);
     }
 
     @Override
-    public void store() {
-
+    public void store(SqlSession sqlSession) {
+        Nutriment_3_Mapper nutriment_3_mapper=sqlSession.getMapper(Nutriment_3_Mapper.class);
+        nutriment_3_mapper.insert(this);
     }
 
     public void setYear(String year){

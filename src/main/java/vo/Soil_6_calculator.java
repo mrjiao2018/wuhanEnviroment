@@ -1,8 +1,13 @@
-package vo.soil;
+package vo;
 
+import com.google.gson.Gson;
+import dao.Mapper.Soil_6_Mapper;
+import org.apache.ibatis.session.SqlSession;
+
+import java.util.HashMap;
 import java.util.Map;
 
-public class Soil_6_calculator {
+public class Soil_6_calculator implements TableItem{
     private double a;
     private double x1;
     private double x2;
@@ -56,9 +61,19 @@ public class Soil_6_calculator {
         this.result = result;
     }
 
-    public double calc(){
+    public String calc(){
         result =a*(x2-x1)*(n*c1/r1+p*c1/r2+k*c2/r3+ m*c3);
-        return result;
+        Map resultMap=new HashMap<String,Float>();
+        resultMap.put("result",result);
+
+        Gson gson=new Gson();
+        return gson.toJson(resultMap);
+    }
+
+    @Override
+    public void store(SqlSession sqlSession) {
+        Soil_6_Mapper soil_6_mapper=sqlSession.getMapper(Soil_6_Mapper.class);
+        soil_6_mapper.insert(this);
     }
 
     public void setYear(String year){

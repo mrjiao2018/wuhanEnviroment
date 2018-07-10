@@ -1,7 +1,11 @@
-package vo.lon;
+package vo;
 
+import com.google.gson.Gson;
+import dao.Mapper.Ion_1_Mapper;
+import org.apache.ibatis.session.SqlSession;
 import vo.TableItem;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Ion_1_calculator implements TableItem {
@@ -30,14 +34,19 @@ public class Ion_1_calculator implements TableItem {
         this.result = result;
     }
 
-    public double calc(){
+    public String calc(){
         result =5.256E15*q*a*h/l;
-        return result;
+        Map resultMap=new HashMap<String,Float>();
+        resultMap.put("result",result);
+
+        Gson gson=new Gson();
+        return gson.toJson(resultMap);
     }
 
     @Override
-    public void store() {
-
+    public void store(SqlSession sqlSession) {
+        Ion_1_Mapper ion_1_mapper=sqlSession.getMapper(Ion_1_Mapper.class);
+        ion_1_mapper.insert(this);
     }
 
     public void setYear(String year){

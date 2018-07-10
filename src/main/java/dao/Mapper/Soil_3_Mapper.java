@@ -1,6 +1,6 @@
 package dao.Mapper;
 
-import vo.soil.Soil_3_calculator;
+import vo.Soil_3_calculator;
 
 public interface Soil_3_Mapper {
     Soil_3_calculator select(String year);

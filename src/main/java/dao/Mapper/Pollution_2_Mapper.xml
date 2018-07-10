@@ -4,11 +4,11 @@
 
 <mapper namespace="dao.Mapper.Pollution_2_Mapper">
     <!--根据id查询数据-->
-    <select id="select" resultType="vo.pollution.Pollution_2_calculator">
+    <select id="select" resultType="vo.Pollution_2_calculator">
         select * from pollution_2_calculator where year=#{year}
     </select>
 
-    <insert id="insert" parameterType="vo.pollution.Pollution_2_calculator">
+    <insert id="insert" parameterType="vo.Pollution_2_calculator">
         insert into pollution_2_calculator values (#{a},#{q},#{year},#{position},#{result})
     </insert>
 

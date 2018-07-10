@@ -1,6 +1,6 @@
 package dao.Mapper;
 
-import vo.nutriment.Nutriment_3_calculator;
+import vo.Nutriment_3_calculator;
 
 public interface Nutriment_3_Mapper {
     Nutriment_3_calculator select(String year);

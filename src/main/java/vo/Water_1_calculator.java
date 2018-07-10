@@ -1,9 +1,11 @@
 package vo;
 
+import com.google.gson.Gson;
 import dao.Mapper.Water_1_Mapper;
 import dao.SessionFactory;
 import org.apache.ibatis.session.SqlSession;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Water_1_calculator implements TableItem{
@@ -32,14 +34,17 @@ public class Water_1_calculator implements TableItem{
         this.result = result;
     }
 
-    public double calc(){
+    public String calc(){
         result =10*a*(p-e-c);
-        return result;
+        Map resultMap=new HashMap<String,Float>();
+        resultMap.put("result",result);
+
+        Gson gson=new Gson();
+        return gson.toJson(resultMap);
     }
 
     @Override
-    public void store() {
-        SqlSession sqlSession= SessionFactory.getSession();
+    public void store(SqlSession sqlSession) {
         Water_1_Mapper water_1_mapper=sqlSession.getMapper(Water_1_Mapper.class);
         water_1_mapper.insert(this);
     }

@@ -1,9 +1,11 @@
 package vo;
 
-public interface TableItem  {
-    public double calc();
+import org.apache.ibatis.session.SqlSession;
 
-    public void store();
+public interface TableItem  {
+    public String calc();
+
+    public void store(SqlSession sqlSession);
 
     public void setYear(String year);
 }

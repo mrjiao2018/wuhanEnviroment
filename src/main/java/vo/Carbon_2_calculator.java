@@ -1,10 +1,12 @@
-package vo.carbon;
+package vo;
 
+import com.google.gson.Gson;
 import dao.Mapper.Carbon_2_Mapper;
 import dao.SessionFactory;
 import org.apache.ibatis.session.SqlSession;
 import vo.TableItem;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Carbon_2_calculator implements TableItem {
@@ -27,17 +29,20 @@ public class Carbon_2_calculator implements TableItem {
         this.position=position;
     }
 
-    public double calc(){
+    public String calc(){
         result =a*f;
-        return result;
+        Map resultMap=new HashMap<String,Float>();
+        resultMap.put("result",result);
+
+        Gson gson=new Gson();
+        return gson.toJson(resultMap);
     }
 
     public void setYear(String year){
         this.year=year;
     }
 
-    public void store(){
-        SqlSession sqlSession= SessionFactory.getSession();
+    public void store(SqlSession sqlSession){
         Carbon_2_Mapper carbon_2_mapper=sqlSession.getMapper(Carbon_2_Mapper.class);
         carbon_2_mapper.insert(this);
     }

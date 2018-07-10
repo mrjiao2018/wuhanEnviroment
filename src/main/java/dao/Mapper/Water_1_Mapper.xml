@@ -9,7 +9,7 @@
     </select>
 
     <insert id="insert" parameterType="vo.Water_1_calculator">
-        insert into water_1_calculator values (#{a},#{p},#{e},#{c},#{year},#{position},#{result})
+        insert into whenviroment.water_1_calculator values (#{a},#{p},#{e},#{c},#{year},#{position},#{result})
     </insert>
 
 </mapper>

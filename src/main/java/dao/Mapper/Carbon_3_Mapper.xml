@@ -4,11 +4,11 @@
 
 <mapper namespace="dao.Mapper.Carbon_3_Mapper">
     <!--根据id查询数据-->
-    <select id="select" resultType="vo.carbon.Carbon_3_calculator">
+    <select id="select" resultType="vo.Carbon_3_calculator">
         select * from carbon_3_calculator where year=#{year}
     </select>
 
-    <insert id="insert" parameterType="vo.carbon.Carbon_3_calculator">
+    <insert id="insert" parameterType="vo.Carbon_3_calculator">
         insert into carbon_3_calculator values (#{a},#{c},#{r},#{b},#{year},#{position},#{result});
     </insert>
 
