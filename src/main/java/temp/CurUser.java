@@ -22,7 +22,6 @@ public class CurUser {
     }
 
     public void store(){
-        System.out.println(year);
         tableItems.store(year);
     }
 
